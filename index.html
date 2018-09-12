@@ -10,11 +10,12 @@
         crossorigin="anonymous">
     <link rel="stylesheet" href="main.css">
     <script src="main.js"></script>
+    <script src='addtoWishList.js'></script>
     <style>
         #homeslider {
             width: 99.5%;
             height: 600px;
-    
+
             margin-top: 25px;
             z-index: -1;
             position: relative;
@@ -47,7 +48,7 @@
         .wh {
             z-index: -1;
             width: 100%;
-            
+
             height: 600px;
             position: relative;
         }
@@ -69,7 +70,7 @@
             margin-left: 450px;
             z-index: 1;
             position: relative;
-            
+
 
         }
 
@@ -89,14 +90,13 @@
         #make {
             margin-top: 2px;
         }
-        
-                #circle-container {
-                    z-index: 1;
-                    position: absolute;
-                    bottom: -240px;
-                    left: 45%;
-                }
 
+        #circle-container {
+            z-index: 1;
+            position: absolute;
+            bottom: -240px;
+            left: 45%;
+        }
     </style>
 </head>
 
@@ -111,13 +111,11 @@
         <div class="headerB">
             <a href="sales.html">Sales</a>
         </div>
-        <div class="headerB">
-            <a href="wishlist.html" class="fa fa-heart"></a>
-        </div>
+        
         <div class="header" onClick="logIn();" id="logcursor">
             <i class="fa fa-user-circle"></i> Login </div>
         <div class="header">
-            <a href="addtocart.html"><i class="fa fa-cart-plus"></i> Cart</a>
+            <a href="addtocart.html"><i class="fa fa-cart-plus"></i> Cart <span>(<b id="showItemsNum">0</b>)</span></a>
 
         </div>
         <div id="line"></div>
@@ -131,7 +129,7 @@
             <a href="JavaScript:void(0)" onclick="clothesBox();">Clothes</a>
             <br>
             <span id="clo" class="hide">
-               
+
                 <span class="spa">
                     <a href="clothes.html#jeans">Jeans</a>
                 </span>
@@ -157,7 +155,7 @@
                 <span class="spa">
                     <a href="shoes.html#flat">Flat Sandals</a>
                 </span>
-                
+
 
             </span>
         </div>
@@ -173,7 +171,7 @@
                 <span class="spa">
                     <a href="accessories.html#ss">Scarves/Stoles</a>
                 </span>
-                
+
                 <span class="spa">
                     <a href="accessories.html#sun">Sunglasses</a>
                 </span>
@@ -185,7 +183,7 @@
             <br>
             <span id="make" class="hide">
 
-                
+
                 <span class="spa">
                     <a href="makeup.html#eyemake">Eye Shadows</a>
                 </span>
@@ -219,7 +217,7 @@
             <span class="circle"></span>
             <span class="circle"></span>
             <span class="circle"></span>
-            
+
         </div>
     </div>
 
@@ -227,7 +225,7 @@
 
     <div id="end">
         <div id="e">
-            
+
             <div class="e">
                 <a href="aboutUs.html">About us</a>
             </div>
@@ -286,7 +284,7 @@
 
 
     //slider
-    var sliderpics = ["1.png", "2.jpg","4.jpg", "5.png", "6.jpg", "7.png", "8.jpg", "d.jpg"];
+    var sliderpics = ["1.png", "2.jpg", "4.jpg", "5.png", "6.jpg", "7.png", "8.jpg", "d.jpg"];
     var totalpics = 8;
     var currentpic = 0;
 

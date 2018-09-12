@@ -38,13 +38,11 @@
         <div class="headerB">
             <a href="sales.html">Sales</a>
         </div>
-        <div class="headerB">
-            <a href="wishlist.html" class="fa fa-heart"></a>
-        </div>
+
         <div class="header" onClick="logIn();" id="logcursor">
             <i class="fa fa-user-circle"></i> Login </div>
         <div class="header">
-                <a href="addtocart.html"><i class="fa fa-cart-plus"></i> Cart</a>
+                <a href="addtocart.html"><i class="fa fa-cart-plus"></i> Cart <span>(<b id="showItemsNum">0</b>)</span></a>
 
         </div>
         <div id="line"></div>
@@ -64,7 +62,7 @@
             <div>
                 <img src="images/sale1.jpg" class="WH4">
             </div>
-            <div>
+            <div>`
                 <span> Denim Jacket
                     <br> <s>Rs 1000/-</s>  &nbsp;  Rs 930/-</span>
                 <span class="hide" id="BOX37">
@@ -72,7 +70,7 @@
                         <a href="JavaScript:void(0)" class="far fa-heart" id="37" onclick="addToWL(id);"></a>
                     </span>
                     <span class="addtocartbu">
-                        <a href="JavaScript:void(0)">Add to Cart</a>
+                        <a href="JavaScript:void(0)" onclick="incrementItem(36);">Add to Cart</a>
                     </span>
                 </span>
             </div>
@@ -82,14 +80,14 @@
                 <img src="images/sale2.jpg" class="WH4">
             </div>
             <div>
-                <span> Pink Nail Polish
+                <span> Nail Polish
                     <br> <s>Rs 500/-</s>  &nbsp;  Rs 300/-</span>
                 <span class="hide" id="BOX38">
                     <span>
                         <a href="JavaScript:void(0)" class="far fa-heart" id="38" onclick="addToWL(id);"></a>
                     </span>
                     <span class="addtocartbu">
-                        <a href="JavaScript:void(0)">Add to Cart</a>
+                        <a href="JavaScript:void(0)" onclick="incrementItem(37);">Add to Cart</a>
                     </span>
                 </span>
             </div>
@@ -99,14 +97,14 @@
                     <img src="images/sale3.jpg" class="WH4">
                 </div>
                 <div>
-                    <span> Red HandBag
+                    <span> HandBag
                         <br> <s>Rs 800/-</s>  &nbsp;  Rs 590/-</span>
                     <span class="hide" id="BOX39">
                         <span>
                             <a href="JavaScript:void(0)" class="far fa-heart" id="39" onclick="addToWL(id);"></a>
                         </span>
                         <span class="addtocartbu">
-                            <a href="JavaScript:void(0)">Add to Cart</a>
+                            <a href="JavaScript:void(0)" onclick="incrementItem(38);">Add to Cart</a>
                         </span>
                     </span>
                 </div>

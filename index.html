@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Misha's Fashion Store</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="main.css">
+    <script src="main.js"></script>
+    <style>
+        #homeslider {
+            width: 99.5%;
+            height: 600px;
+    
+            margin-top: 25px;
+            z-index: -1;
+            position: relative;
+        }
+
+        #hs {
+            text-align: center;
+        }
+
+        .circle {
+
+            width: 10px;
+            height: 10px;
+            margin: 0 auto;
+            border: 1px solid rgb(172, 85, 85);
+            border-radius: 100%;
+            display: inline-block;
+            margin-top: -110px;
+        }
+
+
+        #changeBackground {
+            background: rgb(240, 128, 128);
+        }
+
+        #removeBackground {
+            background: none;
+        }
+
+        .wh {
+            z-index: -1;
+            width: 100%;
+            
+            height: 600px;
+            position: relative;
+        }
+
+        .shop {
+            display: inline-block;
+
+            margin: 2px;
+            margin-right: 40px;
+            font-size: 26px;
+            vertical-align: top;
+
+        }
+
+        #shop {
+            max-width: 65%;
+            max-height: 38px;
+            margin-top: 20px;
+            margin-left: 450px;
+            z-index: 1;
+            position: relative;
+            
+
+        }
+
+        .spa {
+            display: block;
+            font-size: 20px;
+            overflow: auto;
+            border: 1px solid rgb(155, 155, 155);
+            background-color: rgb(248, 225, 228);
+            border-radius: 2px;
+            padding: 3px;
+        }
+
+        #clo,
+        #acc,
+        #sho,
+        #make {
+            margin-top: 2px;
+        }
+        
+                #circle-container {
+                    z-index: 1;
+                    position: absolute;
+                    bottom: -240px;
+                    left: 45%;
+                }
+
+    </style>
+</head>
+
+<body onLoad="sale();">
+    <div id="a">
+        <div class="headerMain">
+            <img src="main_logo2.jpg" alt="" id="mainlogo">
+        </div>
+        <div class="headerB">
+            <a href="index.html">Home</a>
+        </div>
+        <div class="headerB">
+            <a href="sales.html">Sales</a>
+        </div>
+        <div class="headerB">
+            <a href="wishlist.html" class="fa fa-heart"></a>
+        </div>
+        <div class="header" onClick="logIn();" id="logcursor">
+            <i class="fa fa-user-circle"></i> Login </div>
+        <div class="header">
+            <a href="addtocart.html"><i class="fa fa-cart-plus"></i> Cart</a>
+
+        </div>
+        <div id="line"></div>
+    </div>
+
+    <!-- *********Body*********** -->
+
+
+    <div id="shop">
+        <div class="shop">
+            <a href="JavaScript:void(0)" onclick="clothesBox();">Clothes</a>
+            <br>
+            <span id="clo" class="hide">
+               
+                <span class="spa">
+                    <a href="clothes.html#jeans">Jeans</a>
+                </span>
+                <span class="spa">
+                    <a href="clothes.html#shirts">Shirts</a>
+                </span>
+                <span class="spa">
+                    <a href="clothes.html#denim">Denim</a>
+                </span>
+            </span>
+        </div>
+
+        <div class="shop">
+            <a href="JavaScript:void(0)" onclick="shoesBox();">Shoes</a>
+            <br>
+            <span id="sho" class="hide">
+                <span class="spa">
+                    <a href="shoes.html#wedges">Wedges</a>
+                </span>
+                <span class="spa">
+                    <a href="shoes.html#pumps">pumps</a>
+                </span>
+                <span class="spa">
+                    <a href="shoes.html#flat">Flat Sandals</a>
+                </span>
+                
+
+            </span>
+        </div>
+
+        <div class="shop">
+            <a href="JavaScript:void(0)" onclick="accBox();">Accessories</a>
+            <br>
+            <span id="acc" class="hide">
+
+                <span class="spa">
+                    <a href="accessories.html#hb">Hand Bags</a>
+                </span>
+                <span class="spa">
+                    <a href="accessories.html#ss">Scarves/Stoles</a>
+                </span>
+                
+                <span class="spa">
+                    <a href="accessories.html#sun">Sunglasses</a>
+                </span>
+            </span>
+        </div>
+
+        <div class="shop">
+            <a href="JavaScript:void(0)" onclick="makeupBox();">Makeup</a>
+            <br>
+            <span id="make" class="hide">
+
+                
+                <span class="spa">
+                    <a href="makeup.html#eyemake">Eye Shadows</a>
+                </span>
+                <span class="spa">
+                    <a href="makeup.html#lg">Lip Gloss</a>
+                </span>
+                <span class="spa">
+                    <a href="makeup.html#np">Nail polish</a>
+                </span>
+
+
+            </span>
+        </div>
+
+        <div class="shop">
+            <a href="sales.html" class="hide" id="box">
+                <img src="salebox.jpg" alt="sale" width="300" height="80">
+            </a>
+        </div>
+    </div>
+
+    <div onmouseover="closing();">
+        <div id="homeslider">
+        </div>
+        <div id='circle-container'>
+            <span class="circle"></span>
+            <span class="circle"></span>
+            <span class="circle"></span>
+            <span class="circle"></span>
+            <span class="circle"></span>
+            <span class="circle"></span>
+            <span class="circle"></span>
+            <span class="circle"></span>
+            
+        </div>
+    </div>
+
+
+
+    <div id="end">
+        <div id="e">
+            
+            <div class="e">
+                <a href="aboutUs.html">About us</a>
+            </div>
+            <div class="e">
+                <a href="javaScript:void(0)" onClick="contactbox();">Contact us</a>
+                <br>
+                <div id="cBox" class="hide">
+                    <div>
+                        <a href="mailto:mishasfashionstore.com">Email</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</body>
+<script>
+    let sale = () => {
+        let box = document.getElementById("box");
+        setTimeout(() => {
+            box.className = "show";
+        }, 3000)
+        setTimeout(() => {
+            box.className = "hide";
+        }, 9000)
+    }
+
+    let clothesBox = () => {
+        let box = document.getElementById("clo");
+        box.className = "show";
+    }
+    let shoesBox = () => {
+        let box = document.getElementById("sho");
+        box.className = "show";
+    }
+    let accBox = () => {
+        let box = document.getElementById("acc");
+        box.className = "show";
+    }
+    let makeupBox = () => {
+        let box = document.getElementById("make");
+        box.className = "show";
+    }
+    let closing = () => {
+        document.getElementById("clo").className = "hide";
+        document.getElementById("sho").className = "hide";
+        document.getElementById("acc").className = "hide";
+        document.getElementById("make").className = "hide";
+    }
+
+
+
+
+
+
+    //slider
+    var sliderpics = ["1.png", "2.jpg","4.jpg", "5.png", "6.jpg", "7.png", "8.jpg", "d.jpg"];
+    var totalpics = 8;
+    var currentpic = 0;
+
+
+    let showNext = () => {
+        if (currentpic == totalpics) currentpic = 0;
+        document.getElementById("homeslider").innerHTML = "<img src='images/" + sliderpics[currentpic] + "' class='wh' />"
+        dotcircle();
+        currentpic++;
+    }
+
+    var dotcircle = () => {
+        let circle = document.getElementsByClassName("circle");
+        for (let i = 0; i < circle.length; i++) {
+            if (i == currentpic) {
+                circle[i].id = "changeBackground";
+            }
+            else {
+                circle[i].id = "removeBackground";
+            }
+        }
+    }
+
+    showNext();
+    setInterval(() => {
+        showNext();
+    }, 2000)
+
+
+</script>
+
+</html>

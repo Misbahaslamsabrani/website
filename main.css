@@ -1,0 +1,70 @@
+.header,.headerMain, .headerB{display: inline-block;}
+#mainlogo{height: 300px; width: 100%;}
+
+.header{margin: 1% 2%; height: 30px; font-size: 22px;}
+.headerMain{margin-right: 40px; width: 54%; }
+.headerB{margin: 1% 2%; height: 30px; font-size: 22px; }
+#line{border-top: 2px solid black;}
+a {
+    text-decoration: none;
+    color: black;
+}
+/* body */
+
+
+.hide {
+    display: none;
+}
+
+.show {
+    display: block;
+    overflow: auto;
+}
+#logcursor{cursor: pointer;}
+
+.headings{font-size: 26px; font-weight: bold; 
+    width: 400px; margin: 10px; display: inline-block;
+    text-transform: capitalize; text-decoration: underline;}
+
+.boxes{ width:1300; border: 1px solid pink; margin: 30px auto; 
+    border-radius: 12px; box-shadow: 5px 5px 15px pink;}
+
+.in-bl{display: inline-block; margin-left: 15px; border: 1px solid rgb(223, 221, 221);}
+/* box-shadow: 5px 5px 15px 5px grey; */
+.side{float:right;}
+.addtocartbu{display:inline-block; margin:0 10px; border: 2px solid pink; width:100px; 
+    text-align:center; }
+.WH{width: 300px; height: 300px;}
+.WH1{width: 350px; height: 400px;}
+.WH2{width: 400px; height: 370px;}
+.WH3{width:300px; height: 400px;}
+.WH4{width: 300px; height: 330px;}
+
+.backbutton{display:inline-block; margin: 10px;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /* End */  
+#end{background-color: rgb(223, 222, 222); height:60px; margin-top:25px; }
+#e{width: 14.5%;  margin-left: 85%;}
+.e{display: inline-block; margin-right: 30px; font-size: 18px; margin-top:15px;  
+    vertical-align: top;}
+#cBox{text-align: center}

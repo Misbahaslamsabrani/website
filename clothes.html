@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Clothes</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="main.css">
+    <script src="main.js"></script>
+    <script src="addtoWishList.js"></script>
+
+</head>
+
+<body>
+    <div id="a">
+        <div class="headerMain">
+            <img src="main_logo2.jpg" alt="" id="mainlogo">
+        </div>
+        <div class="headerB">
+            <a href="index.html">Home</a>
+        </div>
+        <div class="headerB">
+            <a href="sales.html">Sales</a>
+        </div>
+        <div class="headerB">
+            <a href="wishlist.html" class="fa fa-heart"></a>
+        </div>
+        <div class="header" onClick="logIn();" id="logcursor">
+            <i class="fa fa-user-circle"></i> Login </div>
+        <div class="header">
+                <a href="addtocart.html"><i class="fa fa-cart-plus"></i> Cart</a>
+
+        </div>
+        <div id="line"></div>
+    </div>
+    <!-- ******** body ******** -->
+
+
+    <!-- jeans -->
+    <div class="boxes">
+        <div class="backbutton">
+            <a href="javaScript:void(0)" class="fa fa-chevron-left" onclick="backpage();"></a>
+        </div>
+        <div id="jeans" class="headings">Jeans</div>
+        <br>
+        <div class="in-bl" onmouseover="showButtons(1)" onmouseout="hideButtons(1)">
+            <div>
+                <img src="images/jeans1.jpg" class="WH4">
+            </div>
+            <div>
+                <span>Light Blue Jeans
+                    <br> Rs 600/-</span>
+                <span class="hide" id="BOX1">
+                    <span>
+                        <a href="JavaScript:void(0)" class="far fa-heart" id="1" onclick="addToWL(id);"></a>
+                    </span>
+                    <span class="addtocartbu">
+                        <a href="JavaScript:void(0)" onclick="incrementItem(0);">Add to Cart</a>
+                    </span>
+                </span>
+            </div>
+        </div>
+        <div class="in-bl" onmouseover="showButtons(2)" onmouseout="hideButtons(2)">
+            <div>
+                <img src="images/jeans2.jpg" class="WH4">
+            </div>
+            <div>
+                <span> Black Jeans
+                    <br> Rs 450/-</span>
+                <span class="hide" id="BOX2">
+                    <span>
+                        <a href="JavaScript:void(0)" class="far fa-heart" id="2" onclick="addToWL(id);"></a>
+                    </span>
+                    <span class="addtocartbu">
+                        <a href="JavaScript:void(0)" onclick="incrementItem(1);">Add to Cart</a>
+                    </span>
+                </span>
+            </div>
+        </div>
+        <div class="in-bl" onmouseover="showButtons(3)" onmouseout="hideButtons(3)">
+            <div>
+                <img src="images/jeans3.jpg" class="WH4">
+            </div>
+            <div>
+                <span> Dark Blue Jeans
+                    <br> Rs 500/-</span>
+                <span class="hide" id="BOX3">
+                    <span>
+                        <a href="JavaScript:void(0)" class="far fa-heart" id="3" onclick="addToWL(id);"></a>
+                    </span>
+                    <span class="addtocartbu">
+                        <a href="JavaScript:void(0)" onclick="incrementItem(2);">Add to Cart</a>
+                    </span>
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Shirts -->
+    <div class="boxes">
+        <div class="backbutton">
+            <a href="javaScript:void(0)" class="fa fa-chevron-left" onclick="backpage();"></a>
+        </div>
+        <div id="shirts" class="headings">Shirts</div>
+        <br>
+        <div class="in-bl" onmouseover="showButtons(4)" onmouseout="hideButtons(4)">
+            <div>
+                <img src="images/sh1.jpg" class="WH">
+            </div>
+            <div>
+                <span>Shirt 1
+                    <br> Rs 400/-</span>
+                <span class="hide" id="BOX4">
+                    <span>
+                        <a href="JavaScript:void(0)" class="far fa-heart" id="heart4" onclick="addToWL(id);"></a>
+                    </span>
+                    <span class="addtocartbu">
+                        <a href="JavaScript:void(0)" onclick="incrementItem(3);">Add to Cart</a>
+                    </span>
+                </span>
+            </div>
+        </div>
+        <div class="in-bl" onmouseover="showButtons(5)" onmouseout="hideButtons(5)">
+            <div>
+                <img src="images/sh2.jpg" class="WH">
+            </div>
+            <div>
+                <span>Shirt 2
+                    <br> Rs 500/-</span>
+                <span class="hide" id="BOX5">
+                    <span>
+                        <a href="JavaScript:void(0)" class="far fa-heart" id="heart5" onclick="addToWL(id);"></a>
+                    </span>
+                    <span class="addtocartbu">
+                        <a href="JavaScript:void(0)" onclick="incrementItem(4);">Add to Cart</a>
+                    </span>
+                </span>
+            </div>
+        </div>
+        <div class="in-bl" onmouseover="showButtons(6)" onmouseout="hideButtons(6)">
+            <div>
+                <img src="images/sh3.jpg" class="WH">
+            </div>
+            <div>
+                <span> Shirt 3
+                    <br> Rs 550/-</span>
+                <span class="hide" id="BOX6">
+                    <span>
+                        <a href="JavaScript:void(0)" class="far fa-heart" id="heart6" onclick="addToWL(id);"></a>
+                    </span>
+                    <span class="addtocartbu">
+                        <a href="JavaScript:void(0)" onclick="incrementItem(5);">Add to Cart</a>
+                    </span>
+                </span>
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- Denim -->
+    <div class="boxes">
+        <div class="backbutton">
+            <a href="javaScript:void(0)" class="fa fa-chevron-left" onclick="backpage();"></a>
+        </div>
+        <div id="denim" class="headings">Denim</div>
+        <br>
+        <div class="in-bl" onmouseover="showButtons(7)" onmouseout="hideButtons(7)">
+            <div>
+                <img src="images/d1.jpg">
+            </div>
+            <div>
+                <span>Denim Jacket 1
+                    <br>Rs 550/-</span>
+                <span class="hide" id="BOX7">
+                    <span>
+                        <a href="JavaScript:void(0)" class="far fa-heart" id="heart7" onclick="addToWL(id);"></a>
+                    </span>
+                    <span class="addtocartbu">
+                        <a href="JavaScript:void(0)" onclick="incrementItem(6);">Add to Cart</a>
+                    </span>
+                </span>
+            </div>
+        </div>
+        <div class="in-bl" onmouseover="showButtons(8)" onmouseout="hideButtons(8)" >
+            <div>
+                <img src="images/d2.jpg">
+            </div>
+            <div>
+                <span> Denim Jacket 2
+                    <br>Rs 500/-</span>
+                <span class="hide" id="BOX8">
+                    <span>
+                        <a href="JavaScript:void(0)" class="far fa-heart" id="heart8" onclick="addToWL(id);"></a>
+                    </span>
+                    <span class="addtocartbu">
+                        <a href="JavaScript:void(0)" onclick="incrementItem(7);">Add to Cart</a>
+                    </span>
+                </span>
+            </div>
+        </div>
+        <div class="in-bl" onmouseover="showButtons(9)" onmouseout="hideButtons(9)">
+            <div>
+                <img src="images/d3.jpg">
+            </div>
+            <div>
+                <span>Denim Jacket 3
+                    <br> Rs 700/-</span>
+                <span class="hide" id="BOX9">
+                    <span>
+                        <a href="JavaScript:void(0)" class="far fa-heart" id="heart9" onclick="addToWL(id);"></a>
+                    </span>
+                    <span class="addtocartbu">
+                        <a href="JavaScript:void(0)" onclick="incrementItem(8);">Add to Cart</a>
+                    </span>
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ******end*****-->
+    <div id="end">
+        <div id="e">
+           
+            <div class="e">
+                <a href="aboutUs.html">About us</a>
+            </div>
+            <div class="e">
+                <a href="javaScript:void(0)" onClick="contactbox();">Contact us</a>
+                <br>
+                <div id="cBox" class="hide">
+                    <div>
+                        <a href="mailto:mishasfashionstore.com">Email</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Document</title>
+    <style>
+        /*  #mainCON {
+            border: 1px solid black;
+        } */
+
+        .fields {
+            margin-left: 20px;
+            border: 1px solid rgb(109, 106, 106);
+            border-radius: 3px;
+        }
+
+        .conheadings {
+            width: 100px;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        #text-area {
+            width: 400px;
+            height: 100px;
+            margin-bottom: 10px;
+        }
+
+        .field1 {
+            width: 40%;
+            margin: 20px 5px;
+            border: 1px solid rgb(252, 216, 216);
+        }
+        legend{font-size: 20px;}
+
+        #conbudiv {
+            width: 42%;
+        }
+
+        #conbu {
+            border: 2px solid pink;
+            background-color: white;
+            margin-left: 82%;
+            height: 30px;
+            border-radius: 5px;
+        }
+
+        #conMessageBOX {
+            text-align: center;
+            /* border: 1px solid black; */
+            width: 86%;
+            display: inline-block;
+            font-size: 20px;
+            margin-top: 10px;
+        }
+
+        #main-message-box {
+            border: 1px solid rgb(204, 201, 201);
+            width: 22%;
+            height: 45px;
+            margin-left: 20px;
+            background-color: rgb(226, 221, 222);
+
+
+        }
+
+        #cross-Button {
+            background: none;
+            border: 1px solid rgb(226, 221, 222);
+            vertical-align: top;
+            margin-top: 2px;
+            cursor: pointer;
+            margin-left: 15px;
+        }
+
+        .show {
+            display: block;
+        }
+
+        .hideMainBox {
+            display: none;
+        }
+        #backButton{
+            cursor: pointer;
+            margin-left: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="mainCON">
+        <span ><i class="fa fa-chevron-left" id="backButton" onclick="gotoback();"></i></span>
+        <form action="javaScript:void(0)" onsubmit="check();">
+            <fieldset class="field1">
+                <legend>Enter your billing information</legend>
+                <span class="conheadings">First Name</span>
+                <input type="text" name="" id="fname" class="fields">
+                <br>
+                <span class="conheadings">Last Name</span>
+                <input type="text" name="" id="lname" class="fields">
+                <br>
+                <span class="conheadings">Email</span>
+                <input type="text" name="" id="email" class="fields">
+                <br>
+                <span class="conheadings">Address</span>
+                <br>
+                <textarea name="" id="text-area" placeholder="Enter your Address.... "></textarea>
+                <br>
+                <span class="conheadings">City </span>
+                <select name="" id="city" class="fields" onBlur = "fillZipValue();">
+                    <option value="karachi">Karachi</option>
+                    <option value="lahore">Lahore</option>
+                    <option value="islamabad">Islambad</option>
+                    <option value="rawalpindi">Rawalpindi</option>
+                    <option value="multan">Multan</option>
+                    <option value="quetta">Quetta</option>
+                    <option value="gujranwala">Gujranwala</option>
+                    <option value="faisalabad">Faisalabad</option>
+                    <option value="hyderabad">Hyderabad</option>
+                </select>
+                <br>
+                <span class="conheadings">Country</span>
+                <input name="" id="country" class="fields" value="Pakistan">
+                
+                <br>
+                <span class="conheadings">Zip Code</span>
+                <input type="text" class="fields" id="zc">
+                <br>
+                <span class="conheadings">Phone Number</span>
+                <input type="text" class="fields" id="phonenum">
+                <br>
+            </fieldset>
+            <fieldset class="field1">
+                <legend>Enter your payment information</legend>
+                <span class="conheadings">Card Type</span>
+                <select name="" class="fields" id="ct">
+                    <option value="visa card">Visa Card</option>
+                    <option value="dredit card">Credit Card</option>
+                    <option value="debit card">Debit Card</option>
+                    <option value="charge card">Charge Card</option>
+                    <option value="atm card">ATM card</option>
+                </select>
+                <br>
+                <span class="conheadings"> Card Number</span>
+                <input type="text" name="" id="cnum" class="fields">
+                <br>
+                <span class="conheadings">Security Code</span>
+                <input type="text" class="fields" id="sc">
+                <br>
+            </fieldset>
+            <div id="conbudiv">
+                <input type="submit" value="Checkout Now" id="conbu">
+            </div>
+        </form>
+            <div id="main-message-box" class="hideMainBox">
+                <div id="conMessageBOX"></div>
+                <button id="cross-Button" onClick="hideMainBox(id)">x</button>
+            </div>
+        
+    </div>
+</body>
+<script>
+    let check = () => {
+        let a = document.getElementById("fname").value;
+        let b = document.getElementById("lname").value;
+        let c = document.getElementById("email").value;
+        let d = document.getElementById("text-area").value;
+        let e = document.getElementById("city").value;
+        let f = document.getElementById("country").value;
+        let h = document.getElementById("phonenum").value;
+        let i = document.getElementById("ct").value;
+        let j = document.getElementById("cnum").value;
+        let k = document.getElementById("sc").value;
+        let fullmessageBox = document.getElementById("main-message-box")
+        let messageBox = document.getElementById("conMessageBOX");
+        let message = checking(a, b, c, d, e, f, h, i, j, k);
+        if (message == "successful") {
+            messageBox.innerHTML = "Thank you for Shopping!";
+            fullmessageBox.className = "show";
+            placeOrder();
+        }
+        else {
+            messageBox.innerHTML = message;
+            fullmessageBox.className = "show";
+        }
+    }
+
+    let checking = (fname, lname, email, add, city, country, phone, ct, cnum, sc) => {
+        
+        if(!fname){
+            return "Name Required!";
+        }
+        else if(!lname){
+            return  "Last Name Required!";
+        }
+        else if(!email){
+            return "Email Address Required!"
+        }
+        else if (email.indexOf("@") == -1) {
+            return "Valid Address Required!"
+        }
+        else if(!add){
+            return "Delivery Address Required";
+        }
+        else if(country !== "Pakistan"){
+            return "We only deliver in Pakistan";
+        }
+        else if(!city){
+            return "Please select any City";
+        }
+        else if(!phone){
+            return "Phone Number Required";
+        }
+        else if(!ct){
+            return "Please select any card type"
+        }
+        else if(!cnum){
+            return "Please fill card number";
+        }
+        else if(!sc){
+            return "Please enter Security Code!"
+        }
+        else { return "successful"};
+        }
+    let hideMainBox = (id) => {
+        let box = document.getElementById(id);
+        box.parentNode.className = 'hideMainBox';
+    }
+    let fillZipValue = () => {
+        let city = document.getElementById("city").value;
+        let zipCode = document.getElementById("zc");
+        switch (city){
+            case "karachi":
+            zipCode.value = 75500;
+            break;
+            case "lahore":
+            zipCode.value = 53720;
+            break;
+            case "islamabad" :
+            zipCode.value = 44000;
+            break;
+            case "rawalpindi" :
+            zipCode.value = 45000;
+            break;
+            case "multan":
+            zipCode.value = 67000;
+            break;
+            case "quetta" :
+            zipCode.value = 87650;
+            break;
+            case "gujranwala": 
+            zipCode.value = 52250;
+            break;
+            case "faisalabad":
+            zipCode.value = 38000;
+            break;
+            case "hyderabad" :
+            zipCode.value = 71000;
+            break;
+            
+        } 
+    }
+    let gotoback = () => {
+        history.back();
+    }
+    let placeOrder = () =>{
+        localStorage.removeItem("cartlist");
+    }
+
+</script>
+
+</html>

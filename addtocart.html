@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cart</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="main.css">
+    <script src="main.js"></script>
+    <script src="addtoWishList.js"></script>
+    <style>
+        #oder-now-button {
+            border: 2px solid pink;
+            width: 7%;
+            text-align: center;
+            height: 25px;
+            padding-top: 5px;
+            margin-left: 65%;
+            
+        }
+        
+
+        /* body styling */
+
+        #mainCartBOX {
+            margin: 15px auto;
+            width: 45%;
+            
+        }
+
+        table {
+            width: 100%;
+        }
+
+        th {
+            border-bottom: 1px solid rgb(245, 178, 178);
+        }
+
+        td {
+            width: 8%;
+            border-bottom: 1px solid pink;
+            font-size: 20px;
+            
+        }
+        
+        tbody{text-align: center;}
+        
+        
+
+        #nothing {
+            display: inline-block;
+            font-size: 30px;
+            width: 43%;
+            text-align: center;
+            border: 1px solid rgb(17, 16, 16);
+            color: rgb(12, 12, 12);
+            margin-left: 100px;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            background-color: rgb(255, 239, 239);
+        }
+
+        #imageWH {
+            width: 85%;
+            height: 150px;
+        }
+
+        .inDecButton {
+            background-color: white;
+            border: 1px solid white;
+            margin: 0 3px;
+            cursor: pointer;
+        }
+        
+        
+    </style>
+</head>
+
+<body>
+    <div id="a">
+        <div class="headerMain">
+            <img src="main_logo2.jpg" alt="" id="mainlogo">
+        </div>
+        <div class="headerB">
+            <a href="index.html">Home</a>
+        </div>
+        <div class="headerB">
+            <a href="sales.html">Sales</a>
+        </div>
+        <div class="headerB">
+            <a href="wishlist.html" class="fa fa-heart"></a>
+        </div>
+        <div class="header" onClick="logIn();" id="logcursor">
+            <i class="fa fa-user-circle"></i> Login </div>
+        <div class="header">
+            <a href="addtocart.html">
+                <i class="fa fa-cart-plus"></i> Cart</a>
+
+        </div>
+        <div id="line"></div>
+    </div>
+    <!-- *****Body**** -->
+    <div id="mainCartBOX">
+        <table id="mainTable">
+            <thead>
+                <tr>
+                    <th>Image</th>
+                    <th>Name</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody id="tableBody">
+
+            </tbody>
+            <tfoot id="tableFoot"></tfoot>
+        </table>
+    </div>
+    <div id="ONbutton">
+    <div id="oder-now-button">
+        <a href="checkOut.html">Order Now</a>
+    </div>
+    </div>
+
+
+
+
+    <!-- *****End**** -->
+    <div id="end">
+        <div id="e">
+
+            <div class="e">
+                <a href="aboutUs.html">About us</a>
+            </div>
+            <div class="e">
+                <a href="javaScript:void(0)" onClick="contactbox();">Contact us</a>
+                <br>
+                <div id="cBox" class="hide">
+                    <div>
+                        <a href="mailto:mishasfashionstore.com">Email</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    let cartItems = localStorage.getItem("cartList") || [];
+
+
+    let cart = cartItems.length > 0 ? cartItems = JSON.parse(cartItems) : false;
+    if (cart == false) {
+        document.getElementById("mainCartBOX").innerHTML = "<span id='nothing'>You have no items in the cart!</span>"
+    }
+    var totalItems = 0;
+    var totalPrice = 0;
+
+    let showItems = (cartItems) => {
+
+        for (var i = 0; i < cartItems.length; i++) {
+            console.log(cartItems[i])
+            document.getElementById("tableBody").innerHTML += "<tr> <td> <img src='images/" + cartItems[i].image + "' id='imageWH'></td><td>" + cartItems[i].name + "</td><td><button class='inDecButton'  onclick='decrementItem(` + i + `)'><i class='fa fa-minus'></i></button>" + cartItems[i].quantity + "<button class='inDecButton' onclick='incrementItem(" + i + ")'><i class='fa fa-plus'></i></button></td><td>" + cartItems[i].price * cartItems[i].quantity + "/-</td>"
+            totalItems += cartItems[i].quantity;
+            totalPrice += cartItems[i].quantity * cartItems[i].price;
+        }
+        document.getElementById("tableFoot").innerHTML += "<tr><td colspan='3'>Total items: " + totalItems + "</td><td>Total Price : " + totalPrice + "/-</td></tr>"
+    }
+    showItems(cart);
+
+</script>
+
+</html>

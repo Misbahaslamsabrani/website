@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Shoes</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    <link rel="stylesheet" href="main.css">
+    <script src="main.js"></script>
+    <script src="addtoWishList.js"></script>
+</head>
+
+<body>
+    <div id="a">
+        <div class="headerMain">
+            <img src="main_logo2.jpg" alt="" id="mainlogo">
+        </div>
+        <div class="headerB">
+            <a href="index.html">Home</a>
+        </div>
+        <div class="headerB">
+            <a href="sales.html">Sales</a>
+        </div>
+        <div class="headerB">
+            <a href="wishlist.html" class="fa fa-heart"></a>
+        </div>
+        <div class="header" onClick="logIn();" id="logcursor">
+            <i class="fa fa-user-circle"></i> Login </div>
+        <div class="header">
+                <a href="addtocart.html"><i class="fa fa-cart-plus"></i> Cart</a>
+
+        </div>
+        <div id="line"></div>
+    </div>
+    <!-- *****body***** -->
+    <div class="boxes">
+            <div class="backbutton"><a href="javaScript:void(0)" class="fa fa-chevron-left" onclick="backpage();"></a></div>
+        <div id="wedges" class="headings">Wedges</div>
+        <br>
+        <div class="in-bl" onmouseover="showButtons(10)" onmouseout="hideButtons(10)">
+            <div>
+                <img src="images/wed1.jpg" class="WH">
+            </div>
+            <div>
+                <span> Wedge 1 <br> Rs 1500/-</span>
+                <span class="hide" id="BOX10"> <span>
+                    <a href="JavaScript:void(0)" class="far fa-heart" id="heart10" onclick="addToWL(id);"></a>
+                </span>
+                <span class="addtocartbu">
+                    <a href="JavaScript:void(0)" onclick="incrementItem(9);">Add to Cart</a>
+                </span> </span>
+            </div>
+        </div>
+        <div class="in-bl" onmouseover="showButtons(11)" onmouseout="hideButtons(11)">
+            <div>
+                <img src="images/wed2.jpg" class="WH">
+            </div>
+            <div>
+                <span> Wedge 2 <br> Rs 1500/-</span>
+                <span class="hide" id="BOX11">    <span>
+                    <a href="JavaScript:void(0)" class="far fa-heart" id="heart11" onclick="addToWL(id);"></a>
+                </span>
+                <span class="addtocartbu">
+                    <a href="JavaScript:void(0)" onclick="incrementItem(10);">Add to Cart</a>
+                </span> </span>
+            </div>
+        </div>
+        <div class="in-bl" onmouseover="showButtons(12)" onmouseout="hideButtons(12)">
+            <div>
+                <img src="images/wed3.jpg" class="WH">
+            </div>
+            <div>
+                <span> Wedge 3 <br> Rs 2000/-</span>
+                <span class="hide" id="BOX12">        <span>
+                    <a href="JavaScript:void(0)" class="far fa-heart" id="heart12" onclick="addToWL(id);"></a>
+                </span>
+                <span class="addtocartbu">
+                    <a href="JavaScript:void(0)" onclick="incrementItem(11);">Add to Cart</a>
+                </span> </span>
+            </div>
+        </div>
+    </div>
+    <!-- pumps -->
+    <div class="boxes">
+            <div class="backbutton"><a href="javaScript:void(0)" class="fa fa-chevron-left" onclick="backpage();"></a></div>
+        <div id="pumps" class="headings">Pumps</div>
+        <br>
+        <div class="in-bl" onmouseover="showButtons(13)" onmouseout="hideButtons(13)">
+            <div>
+                <img src="images/pum1.jpg" class="WH">
+            </div>
+            <div>
+                <span> Pumps 1 <br> Rs 1500/-</span>
+                <span class="hide" id="BOX13">    <span>
+                    <a href="JavaScript:void(0)" class="far fa-heart" id="heart13" onclick="addToWL(id);"></a>
+                </span>
+                <span class="addtocartbu">
+                    <a href="JavaScript:void(0)" onclick="incrementItem(12);">Add to Cart</a>
+                </span> </span>
+            </div>
+        </div>
+        <div class="in-bl" onmouseover="showButtons(14)" onmouseout="hideButtons(14)">
+            <div>
+                <img src="images/pum2.jpg" class="WH">
+            </div>
+            <div>
+                <span> Pumps 2 <br> Rs 1200/-</span>
+                <span class="hide" id="BOX14">       <span>
+                    <a href="JavaScript:void(0)" class="far fa-heart" id="heart14" onclick="addToWL(id);"></a>
+                </span>
+                <span class="addtocartbu">
+                    <a href="JavaScript:void(0)" onclick="incrementItem(13);">Add to Cart</a>
+                </span> </span>
+            </div>
+        </div>
+        <div class="in-bl" onmouseover="showButtons(15)" onmouseout="hideButtons(15)">
+            <div>
+                <img src="images/pum3.jpg" class="WH">
+            </div>
+            <div>
+                <span> Pumps 3 <br> Rs 1500/-</span>
+                <span class="hide" id="BOX15">   <span>
+                    <a href="JavaScript:void(0)" class="far fa-heart" id="heart15" onclick="addToWL(id);"></a>
+                </span>
+                <span class="addtocartbu">
+                    <a href="JavaScript:void(0)" onclick="incrementItem(14);">Add to Cart</a>
+                </span> </span>
+            </div>
+        </div>
+    </div>
+    <!-- flat scandles -->
+    <div class="boxes">
+            <div class="backbutton"><a href="javaScript:void(0)" class="fa fa-chevron-left" onclick="backpage();"></a></div>
+        <div id="flat" class="headings">Flat Scandles</div>
+        <br>
+        <div class="in-bl" onmouseover="showButtons(16)" onmouseout="hideButtons(16)">
+            <div>
+                <img src="images/flat1.jpg" class="WH">
+            </div>
+            <div>
+                <span>Black Sandals<br> Rs 450/-</span>
+                <span class="hide" id="BOX16">        <span>
+                    <a href="JavaScript:void(0)" class="far fa-heart" id="heart16" onclick="addToWL(id);"></a>
+                </span>
+                <span class="addtocartbu">
+                    <a href="JavaScript:void(0)" onclick="incrementItem(15);">Add to Cart</a>
+                </span> </span>
+            </div>
+        </div>
+        <div class="in-bl" onmouseover="showButtons(17)" onmouseout="hideButtons(17)">
+            <div>
+                <img src="images/flat2.jpg" class="WH">
+            </div>
+            <div>
+                <span>  Pink Stylish Sandals  <br> Rs 700/-</span>
+                <span class="hide" id="BOX17">        <span>
+                    <a href="JavaScript:void(0)" class="far fa-heart" id="heart17" onclick="addToWL(id);"></a>
+                </span>
+                <span class="addtocartbu">
+                    <a href="JavaScript:void(0)" onclick="incrementItem(16);">Add to Cart</a>
+                </span> </span>
+            </div>
+        </div>
+        <div class="in-bl" onmouseover="showButtons(18)" onmouseout="hideButtons(18)">
+            <div>
+                <img src="images/flat3.jpg" class="WH">
+            </div>
+            <div>
+                <span> Plain stylish Sandals  <br> Rs 500/-</span>
+                <span class="hide" id="BOX18">        <span>
+                    <a href="JavaScript:void(0)" class="far fa-heart" id="heart18" onclick="addToWL(id);"></a>
+                </span>
+                <span class="addtocartbu">
+                    <a href="JavaScript:void(0)" onclick="incrementItem(17);">Add to Cart</a>
+                </span> </span>
+            </div>
+        </div>
+    </div>
+
+    
+
+    <!-- ******end*****-->
+    <div id="end">
+        <div id="e">
+            
+            <div class="e">
+                <a href="aboutUs.html">About us</a>
+            </div>
+            <div class="e">
+                <a href="javaScript:void(0)" onClick="contactbox();">Contact us</a>
+                <br>
+                <div id="cBox" class="hide">
+                    <div>
+                        <a href="mailto:mishasfashionstore.com">Email</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

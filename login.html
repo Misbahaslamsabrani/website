@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>LogIN Form</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="main.js"></script>
+    <style>
+        #main {
+            width: 25%;
+            height: 470px;
+            margin: 80px auto;
+            border: 1px solid white;
+            border-radius: 8px;
+            background-color: white;
+
+        }
+
+
+        body {
+            background-color: rgb(255, 213, 221)
+        }
+
+        .o {
+            display: block;
+            margin-top: 30px;
+            font-size: 20px;
+        }
+
+        #bu {
+            display: block;
+            margin-top: 35px;
+            margin-left: 100px;
+            background-color: white;
+            border: 2px solid rgb(51, 28, 33);
+            width: 75px;
+            height: 30px;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        #a {
+            width: 200px;
+            margin: 40px auto 10px;
+            ;
+
+        }
+
+        #backbu {
+            margin-left: 10px;
+            margin-top: 10px;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+        /* message box */
+
+        .showmessaBox {
+
+            margin: 0 auto;
+            width: 300px;
+            height: 50px;
+            text-align: center;
+
+            font-size: 18px;
+            color: black;
+            background-color: rgb(240, 240, 240);
+            border: 1px solid rgb(250, 220, 230);
+            border-radius: 10px;
+
+        }
+
+        #messBoxT {
+            display: inline-block;
+            margin: 13px 5px 0 0;
+            width: 260px;
+        }
+
+        #messaBoxBu {
+            background: none;
+            border: 1px solid rgb(236, 234, 235);
+            vertical-align: top;
+            margin-top: 4px;
+            cursor: pointer;
+        }
+
+        .hideMe {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="main">
+        <div id="backbu">
+            <a href="javaScript:void(0)" class="fa fa-chevron-left" onclick="backpage();"></a>
+        </div>
+        <div id="a">
+            <form action="javaScript:void(0)" onSubmit="submt();">
+                <label for="name" class="o">Name: </label>
+                <br>
+                <i class="fa fa-user"> </i>
+                <input type="text" id="name">
+                <label for="email" class="o">Email: </label>
+                <br>
+                <i class="fa fa-envelope"></i>
+                <input type="text" id="email">
+                <label for="pass" class="o">Password: </label>
+                <br>
+                <i class="fa fa-eye-slash"></i>
+                <input type="password" id="pass">
+                <input type="submit" id="bu" value="LogIn">
+
+            </form>
+        </div>
+        <div id="messaBox" class="hideMe">
+            <span id="messBoxT"></span>
+            <button id="messaBoxBu" onclick="hideMe();">
+                <i class="fa fa-times"></i>
+            </button>
+        </div>
+    </div>
+</body>
+<script>
+    let submt = () => {
+        let name = document.getElementById("name").value;
+        let email = document.getElementById("email").value;
+        let pass = document.getElementById("pass").value;
+        let messaBox = document.getElementById("messaBox");
+        let messaBoxText = document.getElementById("messBoxT");
+        let message = what(name, email, pass);
+        if (message == "Log In Successful!") {
+            messaBoxText.innerHTML = message;
+            messaBox.className = "showmessaBox";
+            location.href = "index.html"
+        }
+        else {
+            messaBoxText.innerHTML = message;
+            messaBox.className = "showmessaBox";
+        }
+
+
+    }
+    let what = (name, email, pass) => {
+        if (!name) {
+            return "Username Required!";
+        }
+        else if (!email) {
+            return "Email Address Required!";
+        }
+        else if (email.indexOf("@") == -1) {
+            return "Valid Address Required!"
+        }
+        else if (!pass) {
+            return "Password Required!";
+        }
+
+        else { return "Log In Successful!" };
+    }
+    let hideMe = () => {
+        let messaBox = document.getElementById("messaBox");
+        messaBox.className = "hideMe";
+    }
+</script>
+
+</html>

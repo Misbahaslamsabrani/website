@@ -1,9 +1,9 @@
 .header,.headerMain, .headerB{display: inline-block;}
 #mainlogo{height: 300px; width: 100%;}
 
-.header{margin: 1% 2%; height: 30px; font-size: 22px;}
-.headerMain{margin-right: 40px; width: 54%; }
-.headerB{margin: 1% 2%; height: 30px; font-size: 22px; }
+.header{margin: 1% 2%; height: 30px; font-size: 22px; }
+.headerMain{margin-right: 3%; width: 54%;}
+.headerB{margin: 1% 2%; height: 30px; font-size: 22px;}
 #line{border-top: 2px solid black;}
 a {
     text-decoration: none;
@@ -65,8 +65,8 @@ a {
 
 
   /* End */  
-#end{background-color: rgb(223, 222, 222); height:60px; margin-top:25px; width:99%; }
-#e{width: 17%;  margin-left: 79%; }
-.e{display: inline-block; margin-right: 30px; font-size: 18px; margin-top:15px;  
+#end{background-color: rgb(223, 222, 222); height:60px; margin-top:2%; width:99%;  }
+#e{width: 189px; margin-left: 80%;  }
+.e{display: inline-block; margin-right: 10%; font-size: 18px; margin-top:5%;  
     vertical-align: top;}
 #cBox{text-align: center}

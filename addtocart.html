@@ -17,7 +17,8 @@
             text-align: center;
             height: 25px;
             padding-top: 5px;
-            margin-left: 65%;
+            margin-left: 66%;
+            margin-top: 3%;
 
         }
 
@@ -36,6 +37,8 @@
 
         th {
             border-bottom: 1px solid rgb(245, 178, 178);
+
+            font-size: 20px;
         }
 
         td {
@@ -49,12 +52,19 @@
             text-align: center;
         }
 
+        .emptyTd {
+            border: 1px solid white;
+        }
+
+        
+
+
 
 
         #nothing {
             display: inline-block;
             font-size: 30px;
-            width: 43%;
+            width: 62%;
             text-align: center;
             border: 1px solid rgb(17, 16, 16);
             color: rgb(12, 12, 12);
@@ -75,9 +85,25 @@
             margin: 0 3px;
             cursor: pointer;
         }
-        .hideONBOX{display:none;}
-        .showONBOX{display:block;}
 
+        .hideONBOX {
+            display: none;
+        }
+
+        .showONBOX {
+            display: block;
+        }
+
+        .delbutton {
+            background-color: rgb(255, 193, 193);
+            width: 21px;
+            height: 21px;
+            border-radius: 100%;
+            cursor: pointer;
+            border: 1px solid white;
+            color: rgb(110, 110, 110);
+            
+        }
     </style>
 </head>
 
@@ -92,12 +118,15 @@
         <div class="headerB">
             <a href="sales.html">Sales</a>
         </div>
-        
+
         <div class="header" onClick="logIn();" id="logcursor">
             <i class="fa fa-user-circle"></i> Login </div>
         <div class="header">
             <a href="addtocart.html">
-                <i class="fa fa-cart-plus"></i> Cart<span>(<b id="showItemsNum">0</b>)</span></a>
+                <i class="fa fa-cart-plus"></i> Cart
+                <span>(
+                    <b id="showItemsNum">0</b>)</span>
+            </a>
 
         </div>
         <div id="line"></div>
@@ -111,7 +140,7 @@
                     <th>Name</th>
                     <th>Quantity</th>
                     <th>Price</th>
-                    <th>Remove</th>
+                    <td class="emptyTd"></td>
                 </tr>
             </thead>
             <tbody id="tableBody">
@@ -149,8 +178,9 @@
     </div>
 </body>
 <script>
-let cartItems = localStorage.getItem("cartList") || [];
-let cart = cartItems.length > 0 ? cartItems = JSON.parse(cartItems) : false;
+    
+    let cartItems = localStorage.getItem("cartList") || [];
+    let cart = cartItems.length > 0 ? cartItems = JSON.parse(cartItems) : false;
 
     let showItems = (cartItems) => {
         document.getElementById("tableBody").innerHTML = "";
@@ -164,23 +194,23 @@ let cart = cartItems.length > 0 ? cartItems = JSON.parse(cartItems) : false;
         var totalItems = 0;
         var totalPrice = 0;
         for (var i = 0; i < cartItems.length; i++) {
-            // console.log(cartItems[i])
-            document.getElementById("tableBody").innerHTML += "<tr> <td> <img src='images/" + cartItems[i].image + "' id='imageWH'></td><td>" + cartItems[i].name + "</td><td><button class='inDecButton'  onclick='decQuantity(" + i + ")'><i class='fa fa-minus'></i></button>" + cartItems[i].quantity + "<button class='inDecButton' onclick='increQuantity(" + i + ")'><i class='fa fa-plus'></i></button></td><td>" + cartItems[i].price * cartItems[i].quantity + "/-</td> <td><button onclick='delItem(" + i + ");'>x</button></td>"
+
+            document.getElementById("tableBody").innerHTML += "<tr> <td> <img src='images/" + cartItems[i].image + "' id='imageWH'></td><td>" + cartItems[i].name + "</td><td><button class='inDecButton'  onclick='decQuantity(" + i + ")'><i class='fa fa-minus'></i></button>" + cartItems[i].quantity + "<button class='inDecButton' onclick='increQuantity(" + i + ")'><i class='fa fa-plus'></i></button></td><td>" + cartItems[i].price * cartItems[i].quantity + "/-</td><td class='emptyTd'> <button class='delbutton'  onclick='delItem(" + i + ");'>x</button></td>"
             totalItems += cartItems[i].quantity;
             totalPrice += cartItems[i].quantity * cartItems[i].price;
         }
-        document.getElementById("tableFoot").innerHTML += "<tr><td colspan='3'>Total items: " + totalItems + "</td><td>Total Price : " + totalPrice + "/-</td></tr>"
-        document.getElementById("oder-now-button").className = "showONBOX";  
+        document.getElementById("tableFoot").innerHTML += "<tr><th>Total items: </th><td>" + totalItems + "</td><th>Total Price:</th><td>" + totalPrice + "/-</td><td class='emptyTd'></td></tr>"
+        document.getElementById("oder-now-button").className = "showONBOX";
     }
     showItems(cart);
-
+    
 
 
 
     let increQuantity = (index) => {
         console.log(index);
         var a = JSON.parse(localStorage.getItem("cartList"));
-        //let itemSelect = a[index];
+
         a[index].quantity++;
 
         localStorage.setItem("cartList", JSON.stringify(a));
@@ -189,28 +219,26 @@ let cart = cartItems.length > 0 ? cartItems = JSON.parse(cartItems) : false;
     }
     let decQuantity = (index) => {
         var b = JSON.parse(localStorage.getItem("cartList"));
-        if(b[index].quantity < 2){
+        if (b[index].quantity < 2) {
             delItem(index);
-        
+
         }
-        else{
+        else {
             b[index].quantity--;
             localStorage.setItem("cartList", JSON.stringify(b));
-        showItems(b);
-        checkQuantity(); }
+            showItems(b);
+            checkQuantity();
+        }
 
-       
+
     }
 
     let delItem = (index) => {
         let c = JSON.parse(localStorage.getItem("cartList"));
-        console.log(index);
         c.splice(index, 1)
         localStorage.setItem("cartList", JSON.stringify(c));
         showItems(c);
         checkQuantity();
-
-
     }
 
 

@@ -17,3 +17,6 @@ let hideButtons = (num) => {
     let a = document.getElementById("BOX"+num);
     a.className = "hide";
 }
+let changeBG = (num) =>{
+    document.getElementById("AddToCart"+num).className = "addtocartbutton";
+}

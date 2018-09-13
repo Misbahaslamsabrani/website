@@ -34,6 +34,8 @@ a {
 .side{float:right;}
 .addtocartbu{display:inline-block; margin:0 10px; border: 2px solid pink; width:100px; 
     text-align:center; }
+.addtocartbutton{display:inline-block; margin:0 10px; border: 2px solid  rgb(250, 212, 212);; width:100px; 
+    text-align:center; background-color: rgb(255, 220, 220);}
 .WH{width: 300px; height: 300px;}
 .WH1{width: 350px; height: 400px;}
 .WH2{width: 400px; height: 370px;}

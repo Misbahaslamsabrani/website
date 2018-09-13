@@ -131,7 +131,7 @@
                 <input type="text" class="fields" id="zc">
                 <br>
                 <span class="conheadings">Phone Number</span>
-                <input type="text" class="fields" id="phonenum">
+                <input type="text" class="fields" id="phonenum" onBlur='checkPhone();'>
                 <br>
             </fieldset>
             <fieldset class="field1">
@@ -181,7 +181,7 @@
         if (message == "successful") {
             messageBox.innerHTML = "Thank you for Shopping!";
             fullmessageBox.className = "show";
-            placeOrder();
+            localStorage.removeItem("cartList");
         }
         else {
             messageBox.innerHTML = message;
@@ -264,12 +264,25 @@
             
         } 
     }
+    let checkPhone = () => {
+        let phone = document.getElementById("phonenum").value;
+        let messageBox = document.getElementById("conMessageBOX");
+        if(phone){
+            for(var i = 0; i <phone.length; i++){
+                if(phone.charAt(i) >=0 && phone.charAt(i) <= 9){
+                    
+                }
+                else{
+                    messageBox.innerHTML = "Enter Valid Phone Number!"
+                }
+            }
+
+        }
+    }
     let gotoback = () => {
         history.back();
     }
-    let placeOrder = () =>{
-        localStorage.removeItem("cartlist");
-    }
+    
 
 </script>
 

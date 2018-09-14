@@ -109,15 +109,15 @@
                 <label for="name" class="o">Name: </label>
                 <br>
                 <i class="fa fa-user"> </i>
-                <input type="text" id="name">
+                <input type="text" id="name" onBlur='checkName(id);'>
                 <label for="email" class="o">Email: </label>
                 <br>
                 <i class="fa fa-envelope"></i>
-                <input type="text" id="email">
+                <input type="text" id="email" onBlur='checkEmail(id);'>
                 <label for="pass" class="o">Password: </label>
                 <br>
                 <i class="fa fa-eye-slash"></i>
-                <input type="password" id="pass">
+                <input type="password" id="pass" onBlur='checkPass(id);'>
                 <input type="submit" id="bu" value="LogIn">
 
             </form>
@@ -132,41 +132,109 @@
 </body>
 <script>
     let submt = () => {
-        let name = document.getElementById("name").value;
-        let email = document.getElementById("email").value;
-        let pass = document.getElementById("pass").value;
         let messaBox = document.getElementById("messaBox");
-        let messaBoxText = document.getElementById("messBoxT");
-        let message = what(name, email, pass);
-        if (message == "Log In Successful!") {
-            messaBoxText.innerHTML = message;
+        let a = checkName("name");
+        let b = checkEmail("email");
+        let c = checkPass("pass");
+        let mess = "";
+        if (a && b && c) {
+            mess = "LogIn Successful!!";
             messaBox.className = "showmessaBox";
             location.href = "index.html"
         }
         else {
-            messaBoxText.innerHTML = message;
+            mess = "Sorry can't LogIn!!"
             messaBox.className = "showmessaBox";
         }
+        document.getElementById("messBoxT").innerHTML = mess;
 
 
     }
-    let what = (name, email, pass) => {
-        if (!name) {
-            return "Username Required!";
-        }
-        else if (!email) {
-            return "Email Address Required!";
+    
+    let checkEmail = (id) =>{
+        let email = document.getElementById(id).value;
+        let m = false;
+        let message = "";
+        if(!email){
+            message = "Email Address required!";
+            m = true;
         }
         else if (email.indexOf("@") == -1) {
-            return "Valid Address Required!"
+            message = "Valid Email Address Required!"
+            m = true;
         }
-        else if (!pass) {
-            return "Password Required!";
+        else if(email.indexOf(".com") == -1){
+            message = "Valid Email Address Required!"
+            m = true;
         }
-
-        else { return "Log In Successful!" };
+        else if(email.indexOf(" ") !== -1){
+            message = "Space not allow";
+            m = true;
+        }
+        else {
+            m = false;
+        }
+        if(m == true){
+        document.getElementById("messBoxT").innerHTML = message;
+        document.getElementById("messaBox").className = "showmessaBox";
+        }
+        if(m == false){
+            document.getElementById("messaBox").className = "hideMe";
+            return true;
+        }
+        
     }
-    let hideMe = () => {
+    let checkName = (id) => {
+        let name = document.getElementById(id).value;
+        let message = "";
+        let m = false;
+        if(!name){
+            message = "Name Required!";
+            m = true;
+        }
+        else if(name.length < 8){
+            message = "Name should have 8 characters";
+            m = true;
+        }
+        else {m = false;}
+        for(var i = 0; i<name.length; i++){
+           if((name.charCodeAt(i) >=48 && name.charCodeAt(i) <=57)){
+            message = "Only Alphabets Allow"
+            m = true;
+            }
+        }
+        if(m == true){
+        document.getElementById("messBoxT").innerHTML = message;
+        document.getElementById("messaBox").className = "showmessaBox";
+        }
+        if(m == false){
+            document.getElementById("messaBox").className = "hideMe";
+            return true;
+        }
+    }
+    let checkPass = (id) => {
+        let pass = document.getElementById(id).value;
+        let message = "";
+        let m = false;
+        if(!pass){
+            message  = "Password Required!";
+            m = true;
+        }
+        else if(pass.indexOf(" ") !== -1){
+            message = "Spaces not allowed!";
+            m = true;
+        }
+        else {m = false;}
+        if(m == true){
+        document.getElementById("messBoxT").innerHTML = message;
+        document.getElementById("messaBox").className = "showmessaBox";
+        }
+        if(m == false){
+            document.getElementById("messaBox").className = "hideMe";
+            return true;
+        }
+    }
+    let hideMe = () => { 
         let messaBox = document.getElementById("messaBox");
         messaBox.className = "hideMe";
     }

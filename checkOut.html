@@ -60,9 +60,9 @@
 
         #main-message-box {
             border: 1px solid rgb(204, 201, 201);
-            width: 22%;
+            width: 30%;
             height: 45px;
-            margin-left: 20px;
+            margin-left: 3%;
             background-color: rgb(226, 221, 222);
 
 
@@ -93,25 +93,25 @@
 
 <body>
     <div id="mainCON">
-        <span ><i class="fa fa-chevron-left" id="backButton" onclick="gotoback();"></i></span>
+        <span><i class="fa fa-chevron-left" id="backButton" onclick="gotoback();"></i></span>
         <form action="javaScript:void(0)" onsubmit="check();">
             <fieldset class="field1">
                 <legend>Enter your billing information</legend>
                 <span class="conheadings">First Name</span>
-                <input type="text" name="" id="fname" class="fields">
+                <input type="text" name="" id="fname" class="fields" onBlur='checkfname(id);'>
                 <br>
                 <span class="conheadings">Last Name</span>
-                <input type="text" name="" id="lname" class="fields">
+                <input type="text" name="" id="lname" class="fields" onBlur='checklname(id);'>
                 <br>
                 <span class="conheadings">Email</span>
-                <input type="text" name="" id="email" class="fields">
+                <input type="text" name="" id="email" class="fields" onBlur=checkemail(id);>
                 <br>
                 <span class="conheadings">Address</span>
                 <br>
-                <textarea name="" id="text-area" placeholder="Enter your Address.... "></textarea>
+                <textarea name="" id="text-area" placeholder="Enter your Address.... " onBlur="checkadd(id);"></textarea>
                 <br>
                 <span class="conheadings">City </span>
-                <select name="" id="city" class="fields" onBlur = "fillZipValue();">
+                <select name="" id="city" class="fields" onBlur="fillZipValue();">
                     <option value="karachi">Karachi</option>
                     <option value="lahore">Lahore</option>
                     <option value="islamabad">Islambad</option>
@@ -124,14 +124,14 @@
                 </select>
                 <br>
                 <span class="conheadings">Country</span>
-                <input name="" id="country" class="fields" value="Pakistan">
-                
+                <input name="" id="country" class="fields" size="5" value=" Pakistan" onfocus="disfield(id);">
+
                 <br>
                 <span class="conheadings">Zip Code</span>
-                <input type="text" class="fields" id="zc">
+                <input type="text" class="fields" size="4" id="zc" onfocus="diszip(id);">
                 <br>
                 <span class="conheadings">Phone Number</span>
-                <input type="text" class="fields" id="phonenum" onBlur='checkPhone();'>
+                <input type="text" class="fields" id="phonenum" onBlur='checkPhone(id);'>
                 <br>
             </fieldset>
             <fieldset class="field1">
@@ -146,143 +146,337 @@
                 </select>
                 <br>
                 <span class="conheadings"> Card Number</span>
-                <input type="text" name="" id="cnum" class="fields">
+                <input type="text" name="" id="cnum" class="fields" onBlur="checkcardnum(id);">
                 <br>
                 <span class="conheadings">Security Code</span>
-                <input type="text" class="fields" id="sc">
+                <input type="text" class="fields" id="sc" onBlur="checksc(id);">
                 <br>
             </fieldset>
             <div id="conbudiv">
                 <input type="submit" value="Checkout Now" id="conbu">
             </div>
         </form>
-            <div id="main-message-box" class="hideMainBox">
-                <div id="conMessageBOX"></div>
-                <button id="cross-Button" onClick="hideMainBox(id)">x</button>
-            </div>
-        
+        <div id="main-message-box" class="hideMainBox">
+            <div id="conMessageBOX"></div>
+            <button id="cross-Button" onClick="hideMainBox(id)">x</button>
+        </div>
+
     </div>
 </body>
 <script>
     let check = () => {
-        let a = document.getElementById("fname").value;
-        let b = document.getElementById("lname").value;
-        let c = document.getElementById("email").value;
-        let d = document.getElementById("text-area").value;
-        let e = document.getElementById("city").value;
-        let f = document.getElementById("country").value;
-        let h = document.getElementById("phonenum").value;
-        let i = document.getElementById("ct").value;
-        let j = document.getElementById("cnum").value;
-        let k = document.getElementById("sc").value;
+
         let fullmessageBox = document.getElementById("main-message-box")
-        let messageBox = document.getElementById("conMessageBOX");
-        let message = checking(a, b, c, d, e, f, h, i, j, k);
-        if (message == "successful") {
-            messageBox.innerHTML = "Thank you for Shopping!";
+
+        let a = checkfname("fname");
+        let b = checklname("lname");
+        let c = checkemail("email");
+        let d = checkPhone("phonenum");
+        let e = checkcardnum("cnum");
+        let f = checksc("sc");
+        let g = checkadd("text-area");
+        if (a && b && c && d && e && f && g) {
+            message = "Thank you for Shopping!";
             fullmessageBox.className = "show";
             localStorage.removeItem("cartList");
         }
         else {
-            messageBox.innerHTML = message;
+            message = "Sorry there's some problem!";
             fullmessageBox.className = "show";
+        }
+        document.getElementById("conMessageBOX").innerHTML = message;
+
+    }
+
+
+
+
+    let fillZipValue = () => {
+        let city = document.getElementById("city").value;
+        let zipCode = document.getElementById("zc");
+        switch (city) {
+            case "karachi":
+                zipCode.value = 75500;
+                break;
+            case "lahore":
+                zipCode.value = 53720;
+                break;
+            case "islamabad":
+                zipCode.value = 44000;
+                break;
+            case "rawalpindi":
+                zipCode.value = 45000;
+                break;
+            case "multan":
+                zipCode.value = 67000;
+                break;
+            case "quetta":
+                zipCode.value = 87650;
+                break;
+            case "gujranwala":
+                zipCode.value = 52250;
+                break;
+            case "faisalabad":
+                zipCode.value = 38000;
+                break;
+            case "hyderabad":
+                zipCode.value = 71000;
+                break;
+
         }
     }
 
-    let checking = (fname, lname, email, add, city, country, phone, ct, cnum, sc) => {
-        
-        if(!fname){
-            return "Name Required!";
+    let checkfname = (id) => {
+        let fname = document.getElementById(id).value;
+        let message = "";
+        let a = false;
+        if (!fname) {
+            message = "First Name Required!";
+            a = true;
         }
-        else if(!lname){
-            return  "Last Name Required!";
+        else if (fname.length < 3) {
+            message = "Name should should atleast 3 characters long";
+            a = true;
         }
-        else if(!email){
-            return "Email Address Required!"
+        else {
+            a = false;
+        }
+        for (var i = 0; i < fname.length; i++) {
+            if ((fname.charCodeAt(i) >= 48 && fname.charCodeAt(i) <= 57)) {
+                message = "Only Alphabets Allow"
+                a = true;
+            }
+            else if (fname.indexOf("@") !== -1 || fname.indexOf(".") !== -1 || fname.indexOf(",") !== -1 || fname.indexOf("!") !== -1) {
+                message = "special characters not allow!";
+                a = true;
+                break;
+            }
+        }
+        if (a == true) {
+            document.getElementById("conMessageBOX").innerHTML = message;
+            document.getElementById("main-message-box").className = "show";
+
+        }
+        if (a == false) {
+            document.getElementById("main-message-box").className = "hideMainBox";
+            return true;
+        }
+    }
+
+    let checklname = (id) => {
+        let lname = document.getElementById(id).value;
+        let message = "";
+        let a = false;
+        if (!lname) {
+            message = "Last Name Required!";
+            a = true;
+        }
+        else if (lname.length < 3) {
+            message = "Name should should atleast 3 characters long";
+            a = true;
+        }
+        else {
+            a = false;
+        }
+        for (var i = 0; i < lname.length; i++) {
+            if ((lname.charCodeAt(i) >= 48 && lname.charCodeAt(i) <= 57)) {
+                message = "Only Alphabets Allow"
+                a = true;
+            }
+            else if (lname.indexOf("@") !== -1 || lname.indexOf(".") !== -1 || lname.indexOf(",") !== -1 || lname.indexOf("!") !== -1) {
+                message = "special characters not allow!";
+                a = true;
+                break;
+            }
+        }
+        if (a == true) {
+            document.getElementById("conMessageBOX").innerHTML = message;
+            document.getElementById("main-message-box").className = "show";
+        }
+        if (a == false) {
+            document.getElementById("main-message-box").className = "hideMainBox";
+            return true;
+        }
+
+    }
+
+    let checkemail = (id) => {
+        let email = document.getElementById(id).value;
+        let a = false;
+        let message = "";
+        if (!email) {
+            message = "Email Address Required!";
+            a = true;
         }
         else if (email.indexOf("@") == -1) {
-            return "Valid Address Required!"
+            message = "Valid Email Address Required!"
+            a = true;
         }
-        else if(!add){
-            return "Delivery Address Required";
+        else if (email.indexOf(".com") == -1) {
+            message = "Valid Email Address Required!"
+            a = true;
         }
-        else if(country !== "Pakistan"){
-            return "We only deliver in Pakistan";
+        else if (email.indexOf(" ") !== -1) {
+            message = "Space not allow"
+            a = true;
         }
-        else if(!city){
-            return "Please select any City";
+        else {
+            a = false;
         }
-        else if(!phone){
-            return "Phone Number Required";
+        if (a == true) {
+            document.getElementById("conMessageBOX").innerHTML = message;
+            document.getElementById("main-message-box").className = "show";
         }
-        else if(!ct){
-            return "Please select any card type"
+        if (a == false) {
+            document.getElementById("main-message-box").className = "hideMainBox";
+            return true;
         }
-        else if(!cnum){
-            return "Please fill card number";
+    }
+    //country
+    let disfield = (id) => {
+        document.getElementById(id).disabled = true;
+        document.getElementById("conMessageBOX").innerHTML = "We only deliver in Pakistan";
+        document.getElementById("main-message-box").className = "show";
+    }
+    //zipCode
+    let diszip = (id) => {
+        document.getElementById(id).disabled = true;
+        fillZipValue();
+    }
+
+    let checkPhone = (id) => {
+        let phone = document.getElementById(id).value;
+        let message = "";
+        let a = false;
+        if (!phone) {
+            message = "Phone Number Required!";
+            a = true;
         }
-        else if(!sc){
-            return "Please enter Security Code!"
+        else if (phone.indexOf(" ") !== -1 || phone.indexOf("-") !== -1) {
+            message = "Just enter number";
+            a = true;
+
         }
-        else { return "successful"};
+        else if (phone.length < 11 || phone.length > 11) {
+            message = "Enter valid phone number";
+            a = true;
         }
+        else { a = false; }
+
+        for (var i = 0; i < phone.length; i++) {
+            if (phone.charCodeAt(i) >= 97 && phone.charCodeAt(i) <= 122 || phone.charCodeAt(i) >= 65 && phone.charCodeAt(i) <= 90) {
+                message = "Alphabets?";
+                a = true;
+                break;
+            }
+        }
+
+        if (a == true) {
+            document.getElementById("conMessageBOX").innerHTML = message;
+            document.getElementById("main-message-box").className = "show";
+        }
+        if (a == false) {
+            document.getElementById("main-message-box").className = "hideMainBox";
+            return true;
+        }
+    }
+
+    let checkcardnum = (id) => {
+        let cnum = document.getElementById(id).value;
+        let message = "";
+        let a = false;
+        if(!cnum){
+            message = "Card Number Required!";
+            a = true;
+
+        }
+        else if (cnum.indexOf(" ") !== -1 || cnum.indexOf("-") !== -1) {
+            message = "Just enter number";
+            a = true;
+
+        }
+        else if(cnum.length < 16 || cnum.length > 16){
+            message = "Enter valid card number";
+            a = true;
+        }
+        else{a = false;}
+        
+        for (var i = 0; i < cnum.length; i++) {
+            if (cnum.charCodeAt(i) >= 97 && cnum.charCodeAt(i) <= 122 || cnum.charCodeAt(i) >= 65 && cnum.charCodeAt(i) <= 90) {
+                message = "Alphabets?";
+                a = true;
+                break;
+            }
+        }
+
+        if (a == true) {
+            document.getElementById("conMessageBOX").innerHTML = message;
+            document.getElementById("main-message-box").className = "show";
+        }
+        if (a == false) {
+            document.getElementById("main-message-box").className = "hideMainBox";
+            return true;
+        }
+
+    }
+
+    let checksc = (id) => {
+        let sc = document.getElementById(id).value;
+        let message = "";
+        let a = false;
+        if(!sc){
+            message = "Security Code Required!";
+            a = true;
+        }
+        else if (sc.indexOf(" ") !== -1){
+            message = "Space Not allow";
+            a = true;
+        }
+        else{ a = false;}
+        if (a == true) {
+            document.getElementById("conMessageBOX").innerHTML = message;
+            document.getElementById("main-message-box").className = "show";
+        }
+        if (a == false) {
+            document.getElementById("main-message-box").className = "hideMainBox";
+            return true;
+        }
+    }
+
+    let checkadd = (id) => {
+        let add = document.getElementById(id).value;
+        let message = "";
+        let a = false;
+        
+        if(!add){
+            message = "Delivery Address Required!";
+            a = true;
+        }
+        else {a = false;}
+        if (a == true) {
+            document.getElementById("conMessageBOX").innerHTML = message;
+            document.getElementById("main-message-box").className = "show";
+        }
+        if (a == false) {
+            document.getElementById("main-message-box").className = "hideMainBox";
+            return true;
+        }
+    }
+
+
+
+
+
+
+
     let hideMainBox = (id) => {
         let box = document.getElementById(id);
         box.parentNode.className = 'hideMainBox';
     }
-    let fillZipValue = () => {
-        let city = document.getElementById("city").value;
-        let zipCode = document.getElementById("zc");
-        switch (city){
-            case "karachi":
-            zipCode.value = 75500;
-            break;
-            case "lahore":
-            zipCode.value = 53720;
-            break;
-            case "islamabad" :
-            zipCode.value = 44000;
-            break;
-            case "rawalpindi" :
-            zipCode.value = 45000;
-            break;
-            case "multan":
-            zipCode.value = 67000;
-            break;
-            case "quetta" :
-            zipCode.value = 87650;
-            break;
-            case "gujranwala": 
-            zipCode.value = 52250;
-            break;
-            case "faisalabad":
-            zipCode.value = 38000;
-            break;
-            case "hyderabad" :
-            zipCode.value = 71000;
-            break;
-            
-        } 
-    }
-    let checkPhone = () => {
-        let phone = document.getElementById("phonenum").value;
-        let messageBox = document.getElementById("conMessageBOX");
-        if(phone){
-            for(var i = 0; i <phone.length; i++){
-                if(phone.charAt(i) >=0 && phone.charAt(i) <= 9){
-                    
-                }
-                else{
-                    messageBox.innerHTML = "Enter Valid Phone Number!"
-                }
-            }
-
-        }
-    }
     let gotoback = () => {
         history.back();
     }
-    
+
 
 </script>
 

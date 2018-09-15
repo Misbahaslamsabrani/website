@@ -234,20 +234,17 @@
             message = "First Name Required!";
             a = true;
         }
-        else if (fname.length < 3) {
-            message = "Name should should atleast 3 characters long";
-            a = true;
-        }
+        
         else {
             a = false;
         }
         for (var i = 0; i < fname.length; i++) {
             if ((fname.charCodeAt(i) >= 48 && fname.charCodeAt(i) <= 57)) {
-                message = "Only Alphabets Allow"
+                message = "Only Alphabets Allowed"
                 a = true;
             }
             else if (fname.indexOf("@") !== -1 || fname.indexOf(".") !== -1 || fname.indexOf(",") !== -1 || fname.indexOf("!") !== -1) {
-                message = "special characters not allow!";
+                message = "special characters not allowed!";
                 a = true;
                 break;
             }
@@ -271,20 +268,17 @@
             message = "Last Name Required!";
             a = true;
         }
-        else if (lname.length < 3) {
-            message = "Name should should atleast 3 characters long";
-            a = true;
-        }
+        
         else {
             a = false;
         }
         for (var i = 0; i < lname.length; i++) {
             if ((lname.charCodeAt(i) >= 48 && lname.charCodeAt(i) <= 57)) {
-                message = "Only Alphabets Allow"
+                message = "Only Alphabets Allowed"
                 a = true;
             }
             else if (lname.indexOf("@") !== -1 || lname.indexOf(".") !== -1 || lname.indexOf(",") !== -1 || lname.indexOf("!") !== -1) {
-                message = "special characters not allow!";
+                message = "special characters not allowed!";
                 a = true;
                 break;
             }
@@ -317,7 +311,7 @@
             a = true;
         }
         else if (email.indexOf(" ") !== -1) {
-            message = "Space not allow"
+            message = "Space not allowed"
             a = true;
         }
         else {
@@ -365,7 +359,7 @@
 
         for (var i = 0; i < phone.length; i++) {
             if (phone.charCodeAt(i) >= 97 && phone.charCodeAt(i) <= 122 || phone.charCodeAt(i) >= 65 && phone.charCodeAt(i) <= 90) {
-                message = "Alphabets?";
+                message = "Alphabets not allowed!";
                 a = true;
                 break;
             }
@@ -391,19 +385,19 @@
 
         }
         else if (cnum.indexOf(" ") !== -1 || cnum.indexOf("-") !== -1) {
-            message = "Just enter number";
+            message = "Just enter number!";
             a = true;
 
         }
         else if(cnum.length < 16 || cnum.length > 16){
-            message = "Enter valid card number";
+            message = "Enter valid card number!";
             a = true;
         }
         else{a = false;}
         
         for (var i = 0; i < cnum.length; i++) {
             if (cnum.charCodeAt(i) >= 97 && cnum.charCodeAt(i) <= 122 || cnum.charCodeAt(i) >= 65 && cnum.charCodeAt(i) <= 90) {
-                message = "Alphabets?";
+                message = "Alphabets not allowed!";
                 a = true;
                 break;
             }
@@ -429,7 +423,7 @@
             a = true;
         }
         else if (sc.indexOf(" ") !== -1){
-            message = "Space Not allow";
+            message = "Space Not allowed!";
             a = true;
         }
         else{ a = false;}

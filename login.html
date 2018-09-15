@@ -66,7 +66,7 @@
         .showmessaBox {
 
             margin: 0 auto;
-            width: 80%;
+            width: 95%;
             height: 50px;
             text-align: center;
 
@@ -86,10 +86,11 @@
 
         #messaBoxBu {
             background: none;
-            border: 1px solid rgb(236, 234, 235);
+            border: 1px solid rgb(245, 241, 243);
             vertical-align: top;
-            margin-top: 4px;
+            margin-top: 2%;
             cursor: pointer;
+            margin-left:3%;
         }
 
         .hideMe {
@@ -168,7 +169,7 @@
             m = true;
         }
         else if(email.indexOf(" ") !== -1){
-            message = "Space not allow";
+            message = "Space not allowed";
             m = true;
         }
         else {
@@ -192,14 +193,11 @@
             message = "Name Required!";
             m = true;
         }
-        else if(name.length < 8){
-            message = "Name should have 8 characters";
-            m = true;
-        }
+        
         else {m = false;}
         for(var i = 0; i<name.length; i++){
            if((name.charCodeAt(i) >=48 && name.charCodeAt(i) <=57)){
-            message = "Only Alphabets Allow"
+            message = "Only Alphabets Allowed"
             m = true;
             }
         }

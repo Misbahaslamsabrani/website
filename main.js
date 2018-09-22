@@ -6,7 +6,7 @@ let backpage = () => {
 }
 let contactbox = () => {
     let a = document.getElementById("cBox");
-    a.className = "show";
+    a.className = "showEmail";
 }
 
  let showButtons = (num) =>{

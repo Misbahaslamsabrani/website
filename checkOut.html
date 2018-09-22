@@ -8,15 +8,17 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Document</title>
     <style>
-        /*  #mainCON {
-            border: 1px solid black;
-        } */
-
+        
+ /* body{background-color: rgba(248, 206, 213, 0.904);} */
         .fields {
             margin-left: 20px;
-            border: 1px solid rgb(109, 106, 106);
+            border: 1px solid rgb(180, 163, 163);
             border-radius: 3px;
         }
+        .fields:focus{outline: none; border:1px solid rgb(12, 9, 9);}
+        .fields:hover{outline: none; border:1px solid black;}
+        #text-area:focus{outline: none; border: 1px solid black;}
+        #text-area:hover{outline:none; border: 1px solid black;}
 
         .conheadings {
             width: 100px;
@@ -28,45 +30,60 @@
             width: 400px;
             height: 100px;
             margin-bottom: 10px;
+            
         }
 
         .field1 {
             width: 40%;
             margin: 20px 5px;
-            border: 1px solid rgb(252, 216, 216);
+            border: 2px solid rgb(253, 186, 186);
+            
         }
-        legend{font-size: 20px;}
+        legend{font-size: 24px; border: 1px solid rgb(253, 178, 178); margin-bottom: 15px; font-family: Calibri;}
 
         #conbudiv {
             width: 42%;
         }
 
         #conbu {
-            border: 2px solid pink;
+            border: 2px solid rgb(250, 170, 183);
             background-color: white;
             margin-left: 82%;
             height: 30px;
             border-radius: 5px;
+            color:rgb(70, 67, 67);
         }
+        #conbu1{
+            border: 2px solid rgb(250,170,183);
+            background-color: white;
+            margin-left: 82%;
+            height: 30px;
+            border-radius: 5px;
+            color: black;
+            box-shadow: 2px 2px 5px 0 rgb(150, 150, 150);
+        }
+        #conbu1:focus{outline:none;}
+        #conbu:focus{outline:none;}
 
+
+
+        /* message Box */
         #conMessageBOX {
             text-align: center;
-            /* border: 1px solid black; */
-            width: 86%;
+            width: 300px;
             display: inline-block;
-            font-size: 20px;
             margin-top: 10px;
+            border: 1px solid rgb(230, 227, 227);
+            
         }
 
         #main-message-box {
-            border: 1px solid rgb(204, 201, 201);
-            width: 30%;
+            border: 1px solid rgb(214, 214, 214);
+            width: 22%;
             height: 45px;
             margin-left: 3%;
-            background-color: rgb(226, 221, 222);
-
-
-        }
+            background-color: rgb(235, 231, 232);
+            }
 
         #cross-Button {
             background: none;
@@ -74,11 +91,28 @@
             vertical-align: top;
             margin-top: 2px;
             cursor: pointer;
-            margin-left: 15px;
+            color: rgb(151, 150, 150);
+        }
+        #cross-Button1 {
+            background: none;
+            border: 1px solid rgb(219, 217, 217);
+            vertical-align: top;
+            margin-top: 2px;
+            cursor: pointer;
+            color: black;
+            font-weight: bold;
+            border-radius: 100%; 
         }
 
-        .show {
+        .show1{
             display: block;
+            font-size: 18px;
+            color: red;
+        }
+        .show2{
+            display: block;
+            font-size: 24px;
+            color: rgb(241, 95, 127);;
         }
 
         .hideMainBox {
@@ -88,7 +122,10 @@
             cursor: pointer;
             margin-left: 5px;
         }
+        button:active{outline: none;}
+        button:focus{outline: none;}
     </style>
+    
 </head>
 
 <body>
@@ -153,15 +190,16 @@
                 <br>
             </fieldset>
             <div id="conbudiv">
-                <input type="submit" value="Checkout Now" id="conbu">
+                <input type="submit" value="Checkout Now" id="conbu" onFocus="this.id='conbu'" onmouseover="this.id='conbu1'" onmouseout="this.id='conbu'">
             </div>
         </form>
         <div id="main-message-box" class="hideMainBox">
             <div id="conMessageBOX"></div>
-            <button id="cross-Button" onClick="hideMainBox(id)">x</button>
+            <button id="cross-Button" onClick="hideMainBox(id)" onmouseover="this.id='cross-Button1'" onmouseout="this.id='cross-Button'"><i class='fa fa-times'></i></button>
         </div>
 
     </div>
+   
 </body>
 <script>
     let check = () => {
@@ -177,12 +215,13 @@
         let g = checkadd("text-area");
         if (a && b && c && d && e && f && g) {
             message = "Thank you for Shopping!";
-            fullmessageBox.className = "show";
+            fullmessageBox.className = "show2";
             localStorage.removeItem("cartList");
+            location.href = "index.html";
         }
         else {
-            message = "Sorry there's some problem!";
-            fullmessageBox.className = "show";
+            message = "Please fill form properly.";
+            fullmessageBox.className = "show1";
         }
         document.getElementById("conMessageBOX").innerHTML = message;
 
@@ -231,7 +270,7 @@
         let message = "";
         let a = false;
         if (!fname) {
-            message = "First Name Required!";
+            message = "First name required.";
             a = true;
         }
         
@@ -240,18 +279,18 @@
         }
         for (var i = 0; i < fname.length; i++) {
             if ((fname.charCodeAt(i) >= 48 && fname.charCodeAt(i) <= 57)) {
-                message = "Only Alphabets Allowed"
+                message = "Only alphabets are allowed."
                 a = true;
             }
             else if (fname.indexOf("@") !== -1 || fname.indexOf(".") !== -1 || fname.indexOf(",") !== -1 || fname.indexOf("!") !== -1) {
-                message = "special characters not allowed!";
+                message = "Special characters are not allowed.";
                 a = true;
                 break;
             }
         }
         if (a == true) {
             document.getElementById("conMessageBOX").innerHTML = message;
-            document.getElementById("main-message-box").className = "show";
+            document.getElementById("main-message-box").className = "show1";
 
         }
         if (a == false) {
@@ -265,7 +304,7 @@
         let message = "";
         let a = false;
         if (!lname) {
-            message = "Last Name Required!";
+            message = "Last name required.";
             a = true;
         }
         
@@ -274,18 +313,18 @@
         }
         for (var i = 0; i < lname.length; i++) {
             if ((lname.charCodeAt(i) >= 48 && lname.charCodeAt(i) <= 57)) {
-                message = "Only Alphabets Allowed"
+                message = "Only alphabets are allowed."
                 a = true;
             }
             else if (lname.indexOf("@") !== -1 || lname.indexOf(".") !== -1 || lname.indexOf(",") !== -1 || lname.indexOf("!") !== -1) {
-                message = "special characters not allowed!";
+                message = "Special characters are not allowed.";
                 a = true;
                 break;
             }
         }
         if (a == true) {
             document.getElementById("conMessageBOX").innerHTML = message;
-            document.getElementById("main-message-box").className = "show";
+            document.getElementById("main-message-box").className = "show1";
         }
         if (a == false) {
             document.getElementById("main-message-box").className = "hideMainBox";
@@ -299,19 +338,19 @@
         let a = false;
         let message = "";
         if (!email) {
-            message = "Email Address Required!";
+            message = "Email address required.";
             a = true;
         }
         else if (email.indexOf("@") == -1) {
-            message = "Valid Email Address Required!"
+            message = "Valid email address required."
             a = true;
         }
         else if (email.indexOf(".com") == -1) {
-            message = "Valid Email Address Required!"
+            message = "Valid email address required."
             a = true;
         }
         else if (email.indexOf(" ") !== -1) {
-            message = "Space not allowed"
+            message = "Space not allowed."
             a = true;
         }
         else {
@@ -319,7 +358,7 @@
         }
         if (a == true) {
             document.getElementById("conMessageBOX").innerHTML = message;
-            document.getElementById("main-message-box").className = "show";
+            document.getElementById("main-message-box").className = "show1";
         }
         if (a == false) {
             document.getElementById("main-message-box").className = "hideMainBox";
@@ -330,7 +369,7 @@
     let disfield = (id) => {
         document.getElementById(id).disabled = true;
         document.getElementById("conMessageBOX").innerHTML = "We only deliver in Pakistan";
-        document.getElementById("main-message-box").className = "show";
+        document.getElementById("main-message-box").className = "show1";
     }
     //zipCode
     let diszip = (id) => {
@@ -343,23 +382,23 @@
         let message = "";
         let a = false;
         if (!phone) {
-            message = "Phone Number Required!";
+            message = "Phone number required.";
             a = true;
         }
         else if (phone.indexOf(" ") !== -1 || phone.indexOf("-") !== -1) {
-            message = "Just enter number";
+            message = "Enter number only.";
             a = true;
 
         }
         else if (phone.length < 11 || phone.length > 11) {
-            message = "Enter valid phone number";
+            message = "Enter valid phone number.";
             a = true;
         }
         else { a = false; }
 
         for (var i = 0; i < phone.length; i++) {
             if (phone.charCodeAt(i) >= 97 && phone.charCodeAt(i) <= 122 || phone.charCodeAt(i) >= 65 && phone.charCodeAt(i) <= 90) {
-                message = "Alphabets not allowed!";
+                message = "Enter Phone number.";
                 a = true;
                 break;
             }
@@ -367,7 +406,7 @@
 
         if (a == true) {
             document.getElementById("conMessageBOX").innerHTML = message;
-            document.getElementById("main-message-box").className = "show";
+            document.getElementById("main-message-box").className = "show1";
         }
         if (a == false) {
             document.getElementById("main-message-box").className = "hideMainBox";
@@ -380,24 +419,24 @@
         let message = "";
         let a = false;
         if(!cnum){
-            message = "Card Number Required!";
+            message = "Card number required!";
             a = true;
 
         }
         else if (cnum.indexOf(" ") !== -1 || cnum.indexOf("-") !== -1) {
-            message = "Just enter number!";
+            message = "Enter number only.";
             a = true;
 
         }
         else if(cnum.length < 16 || cnum.length > 16){
-            message = "Enter valid card number!";
+            message = "Enter valid card number.";
             a = true;
         }
         else{a = false;}
         
         for (var i = 0; i < cnum.length; i++) {
             if (cnum.charCodeAt(i) >= 97 && cnum.charCodeAt(i) <= 122 || cnum.charCodeAt(i) >= 65 && cnum.charCodeAt(i) <= 90) {
-                message = "Alphabets not allowed!";
+                message = "Enter valid card number.";
                 a = true;
                 break;
             }
@@ -405,7 +444,7 @@
 
         if (a == true) {
             document.getElementById("conMessageBOX").innerHTML = message;
-            document.getElementById("main-message-box").className = "show";
+            document.getElementById("main-message-box").className = "show1";
         }
         if (a == false) {
             document.getElementById("main-message-box").className = "hideMainBox";
@@ -419,17 +458,17 @@
         let message = "";
         let a = false;
         if(!sc){
-            message = "Security Code Required!";
+            message = "Security code required.";
             a = true;
         }
         else if (sc.indexOf(" ") !== -1){
-            message = "Space Not allowed!";
+            message = "Space not allowed.";
             a = true;
         }
         else{ a = false;}
         if (a == true) {
             document.getElementById("conMessageBOX").innerHTML = message;
-            document.getElementById("main-message-box").className = "show";
+            document.getElementById("main-message-box").className = "show1";
         }
         if (a == false) {
             document.getElementById("main-message-box").className = "hideMainBox";
@@ -443,13 +482,13 @@
         let a = false;
         
         if(!add){
-            message = "Delivery Address Required!";
+            message = "Delivery address required!";
             a = true;
         }
         else {a = false;}
         if (a == true) {
             document.getElementById("conMessageBOX").innerHTML = message;
-            document.getElementById("main-message-box").className = "show";
+            document.getElementById("main-message-box").className = "show1";
         }
         if (a == false) {
             document.getElementById("main-message-box").className = "hideMainBox";

@@ -15,8 +15,6 @@
         #homeslider {
             width: 99.5%;
             height: 600px;
-
-            margin-top: 2%;
             z-index: -1;
             position: relative;
         }
@@ -26,7 +24,6 @@
         }
 
         .circle {
-
             width: 10px;
             height: 10px;
             margin: 0 auto;
@@ -55,33 +52,74 @@
 
         .shop {
             display: inline-block;
-
             margin: 2px;
             margin-right: 5%;
             font-size: 26px;
             vertical-align: top;
-
+            text-shadow: 2px 2px 2px rgb(255, 186, 198);
         }
 
         #shop {
-            max-width: 65%;
-            max-height: 38px;
-            margin-top: 20px;
-            margin-left: 27%;
+
+            width: 39%;
+            height: 45px;
+            max-height: 48px;
+            
+            padding-top: 13px;
+            text-align: center;
+            margin-top: 15px; 
             z-index: 1;
             position: relative;
+            border: 1px solid white;
+            display: inline-block;
+            border-radius: 60px;
+            background-color: white;
+            font-family:Forte;
+            vertical-align: top;
+        }
+        #s-sale-box {
+            padding: 0 0 0 0;
+            width: 300px;
+            height: 70px;
+            display: inline-block;
+            z-index: 1;
+            position: relative;
+            vertical-align: top;
+            margin-top: 15px;
+        }
 
-
+        #s-sale-box1 {
+            padding: 0 0 0 0;
+            width: 300px;
+            height: 70px;
+            display: inline-block;
+            z-index: 1;
+            position: relative;
+            vertical-align: top;
+            margin-top: 15px;
+            box-shadow: 2px 10px 8px 5px rgb(223, 197, 197)
         }
 
         .spa {
             display: block;
-            font-size: 20px;
+            font-size: 18px;
             overflow: auto;
-            border: 1px solid rgb(155, 155, 155);
-            background-color: rgb(248, 225, 228);
+            border: 1px solid rgb(240, 170, 170);
+            background-color: rgb(250, 210, 217);
             border-radius: 2px;
             padding: 3px;
+            font-family: 'Courier New';
+        }
+
+        .spa1 {
+            display: block;
+            overflow: auto;
+            border: 1px solid rgb(252, 191, 191);
+            background-color: rgba(245, 130, 147, 0.247);
+            border-radius: 2px;
+            padding: 3px;
+            font-family: 'Courier New';
+            font-size: 18px;
         }
 
         #clo,
@@ -94,9 +132,12 @@
         #circle-container {
             z-index: 1;
             position: absolute;
-            bottom: -35%; 
+            bottom: -35%;
             left: 45%;
         }
+        #showMeTheCorrectWay{height: 100px;}
+        .hideIt{width: 380px; height:99px ;  display: inline-block;}
+        .hideIt1{width: 150px; height:99px ;  display: inline-block;}
     </style>
 </head>
 
@@ -105,16 +146,16 @@
         <div class="headerMain">
             <img src="main_logo2.jpg" alt="" id="mainlogo">
         </div>
-        <div class="headerB">
+        <div class="headerB" onmouseover="this.className='headerB1'" onmouseout="this.className='headerB'">
             <a href="index.html">Home</a>
         </div>
-        <div class="headerB">
+        <div class="headerB" onmouseover="this.className='headerB1'" onmouseout="this.className='headerB'">
             <a href="sales.html">Sales</a>
         </div>
-        
-        <div class="headerB" onClick="logIn();" id="logcursor">
+
+        <div class="headerS" onClick="logIn();" id="logcursor" onmouseover="this.className='headerS1'" onmouseout="this.className='headerS'">
             <i class="fa fa-user-circle"></i> Login </div>
-        <div class="header">
+        <div class="header" onmouseover="this.className='header1'" onmouseout="this.className='header'">
             <a href="addtocart.html"><i class="fa fa-cart-plus"></i> Cart <span>(<b id="showItemsNum">0</b>)</span></a>
 
         </div>
@@ -123,89 +164,102 @@
 
     <!-- *********Body*********** -->
 
+    <div id="showMeTheCorrectWay">
+        <div class="hideIt" onmouseover="hideShoppingList();"></div>
+        <div id="shop"> 
 
-    <div id="shop">
-        <div class="shop">
-            <a href="JavaScript:void(0)" onclick="clothesBox();">Clothes</a>
-            <br>
-            <span id="clo" class="hide">
+            <div class="shop" onmouseover="hideShopping('sho');">
+                <span onmouseover="showShopping('clo');">
+                    <a href="JavaScript:void(0)">Clothes</a>
+                </span>
+                <br>
 
-                <span class="spa">
-                    <a href="clothes.html#jeans">Jeans</a>
+                <div id="clo" class="hide">
+                    <span class="spa" onmouseover="this.className='spa1'" onmouseout="this.className='spa'">
+                        <a href="clothes.html#jeans">Jeans</a>
+                    </span>
+                    <span class="spa" onmouseover="this.className='spa1'" onmouseout="this.className='spa'">
+                        <a href="clothes.html#shirts">Shirts</a>
+                    </span>
+                    <span class="spa" onmouseover="this.className='spa1'" onmouseout="this.className='spa'">
+                        <a href="clothes.html#denim">Denim</a>
+                    </span>
+                </div>
+
+            </div>
+
+            <div class="shop" onmouseover="hideShopping('clo'); hideShopping('acc');">
+                <span onmouseover="showShopping('sho'); this.className='headingsInstyle'">
+                    <a href="JavaScript:void(0)">Shoes</a>
                 </span>
-                <span class="spa">
-                    <a href="clothes.html#shirts">Shirts</a>
+                <br>
+                <span id="sho" class="hide">
+                    <span class="spa" onmouseover="this.className='spa1'" onmouseout="this.className='spa'">
+                        <a href="shoes.html#wedges">Wedges</a>
+                    </span>
+                    <span class="spa" onmouseover="this.className='spa1'" onmouseout="this.className='spa'">
+                        <a href="shoes.html#pumps">pumps</a>
+                    </span>
+                    <span class="spa" onmouseover="this.className='spa1'" onmouseout="this.className='spa'">
+                        <a href="shoes.html#flat">Sandals</a>
+                    </span>
                 </span>
-                <span class="spa">
-                    <a href="clothes.html#denim">Denim</a>
+            </div>
+
+            <div class="shop" onmouseover="hideShopping('sho'); hideShopping('make');">
+                <span onmouseover="showShopping('acc'); this.className='headingsInstyle'">
+                    <a href="JavaScript:void(0)">Accessories</a>
                 </span>
-            </span>
+                <br>
+                <span id="acc" class="hide">
+
+                    <span class="spa" onmouseover="this.className='spa1'" onmouseout="this.className='spa'">
+                        <a href="accessories.html#hb">Hand Bags</a>
+                    </span>
+                    <span class="spa" onmouseover="this.className='spa1'" onmouseout="this.className='spa'">
+                        <a href="accessories.html#ss">Scarves/Stoles</a>
+                    </span>
+
+                    <span class="spa" onmouseover="this.className='spa1'" onmouseout="this.className='spa'">
+                        <a href="accessories.html#sun">Sunglasses</a>
+                    </span>
+                </span>
+            </div>
+
+            <div class="shop" onmouseover="hideShopping('acc');">
+                <span onmouseover="showShopping('make'); this.className='headingsInstyle'">
+                    <a href="JavaScript:void(0)">Makeup</a>
+                </span>
+                <br>
+                <span id="make" class="hide">
+
+
+                    <span class="spa" onmouseover="this.className='spa1'" onmouseout="this.className='spa'">
+                        <a href="makeup.html#eyemake">Eye Shadows</a>
+                    </span>
+                    <span class="spa" onmouseover="this.className='spa1'" onmouseout="this.className='spa'">
+                        <a href="makeup.html#lg">Lip Gloss</a>
+                    </span>
+                    <span class="spa" onmouseover="this.className='spa1'" onmouseout="this.className='spa'">
+                        <a href="makeup.html#np">Nail polish</a>
+                    </span>
+                </span>
+            </div>
         </div>
-
-        <div class="shop">
-            <a href="JavaScript:void(0)" onclick="shoesBox();">Shoes</a>
-            <br>
-            <span id="sho" class="hide">
-                <span class="spa">
-                    <a href="shoes.html#wedges">Wedges</a>
-                </span>
-                <span class="spa">
-                    <a href="shoes.html#pumps">pumps</a>
-                </span>
-                <span class="spa">
-                    <a href="shoes.html#flat">Flat Sandals</a>
-                </span>
+        <div class="hideIt1" onmouseover="hideShoppingList();"></div>
 
 
-            </span>
-        </div>
-
-        <div class="shop">
-            <a href="JavaScript:void(0)" onclick="accBox();">Accessories</a>
-            <br>
-            <span id="acc" class="hide">
-
-                <span class="spa">
-                    <a href="accessories.html#hb">Hand Bags</a>
-                </span>
-                <span class="spa">
-                    <a href="accessories.html#ss">Scarves/Stoles</a>
-                </span>
-
-                <span class="spa">
-                    <a href="accessories.html#sun">Sunglasses</a>
-                </span>
-            </span>
-        </div>
-
-        <div class="shop">
-            <a href="JavaScript:void(0)" onclick="makeupBox();">Makeup</a>
-            <br>
-            <span id="make" class="hide">
-
-
-                <span class="spa">
-                    <a href="makeup.html#eyemake">Eye Shadows</a>
-                </span>
-                <span class="spa">
-                    <a href="makeup.html#lg">Lip Gloss</a>
-                </span>
-                <span class="spa">
-                    <a href="makeup.html#np">Nail polish</a>
-                </span>
-
-
-            </span>
-        </div>
-
-        <div class="shop">
-            <a href="sales.html" class="hide" id="box">
+        <div id="s-sale-box">
+            <a href="sales.html" class="hide" id="box" onmouseover="this.parentNode.id='s-sale-box1'" onmouseout="this.parentNode.id='s-sale-box'">
                 <img src="salebox.jpg" alt="sale" width="300" height="80">
             </a>
         </div>
     </div>
 
-    <div onmouseover="closing();">
+
+
+
+    <div onmouseover="hideShoppingList();">
         <div id="homeslider">
         </div>
         <div id='circle-container'>
@@ -226,23 +280,18 @@
     <div id="end">
         <div id="e">
 
-            <div class="e">
+            <div class="e" onmouseover="this.className='e1'" onmouseout="this.className='e'">
                 <a href="aboutUs.html">About us</a>
             </div>
-            <div class="e">
+
+            <div class="e" onmouseover="this.className='e1'" onmouseout="this.className='e'">
                 <a href="javaScript:void(0)" onClick="contactbox();">Contact us</a>
-                <br>
-                <div id="cBox" class="hide">
-                    <div>
-                        <a href="mailto:mishasfashionstore.com">Email</a>
-                    </div>
-                </div>
             </div>
+            <span id="cBox" class="hide" onmouseover="this.className='showEmail2'" onmouseout="this.className='showEmail'">
+                <a href="mailto:mishasfashionstore@gmail.com">Email</a>
+            </span>
         </div>
     </div>
-
-
-
 </body>
 <script>
     let sale = () => {
@@ -255,27 +304,18 @@
         }, 9000)
     }
 
-    let clothesBox = () => {
-        let box = document.getElementById("clo");
-        box.className = "show";
-    }
-    let shoesBox = () => {
-        let box = document.getElementById("sho");
-        box.className = "show";
-    }
-    let accBox = () => {
-        let box = document.getElementById("acc");
-        box.className = "show";
-    }
-    let makeupBox = () => {
-        let box = document.getElementById("make");
-        box.className = "show";
-    }
-    let closing = () => {
+    var hideShoppingList = () => {
         document.getElementById("clo").className = "hide";
         document.getElementById("sho").className = "hide";
         document.getElementById("acc").className = "hide";
         document.getElementById("make").className = "hide";
+    }
+    let showShopping = (id) => {
+        let box = document.getElementById(id);
+        box.className = "show";
+    }
+    let hideShopping = (id) => {
+        document.getElementById(id).className = "hide";
     }
 
 

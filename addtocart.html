@@ -11,7 +11,28 @@
     <link rel="stylesheet" href="main.css">
 
     <style>
-        #oder-now-button {
+        .order-now-button {
+            border: 3px outset rgb(252, 200, 209);
+            width: 100px;
+            text-align: center;
+            height: 25px;
+            padding-top: 5px;
+            margin-left: 64%;
+            margin-top: 3%;
+            font-size: 17px;
+            background-color: white;
+            box-shadow: 1px 1px 1px rgb(153, 152, 152);
+            font-family: Arial;
+
+        }
+
+        
+        .hideONBOX {
+            display: none;
+        }
+
+        .showONBOX {
+            display: block;
             border: 2px solid pink;
             width: 100px;
             text-align: center;
@@ -19,8 +40,8 @@
             padding-top: 5px;
             margin-left: 64%;
             margin-top: 3%;
-            font-size: 18px;
-
+            font-size: 17px;
+            font-family: Arial;
         }
 
 
@@ -57,7 +78,7 @@
         .emptyTd {
             border: 1px solid white;
         }
-
+        
         
 
 
@@ -65,15 +86,17 @@
 
         #nothing {
             display: inline-block;
-            font-size: 30px;
-            width: 62%;
+            font-size: 40px;
+            width: 78%;
             text-align: center;
-            border: 1px solid rgb(17, 16, 16);
+            border: 1px solid rgb(255, 150, 150);
             color: rgb(12, 12, 12);
             margin-left: 100px;
             margin-top: 5px;
             margin-bottom: 5px;
-            background-color: rgb(255, 239, 239);
+            height: 50px;
+            background-color: none;
+            box-shadow: 1px 1px 1px rgb(150, 149, 149);
         }
 
         #imageWH {
@@ -81,23 +104,24 @@
             height: 150px;
         }
 
-        .inDecButton {
-            background-color: white;
-            border: 1px solid white;
+        .inDecButton1{
+            background-color: rgb(250, 196, 221);
             margin: 0 3px;
             cursor: pointer;
+            border: 1px solid rgb(233, 156, 169);
+            box-shadow: 2px 2px 2px grey;
+        }
+        .inDecButton{
+            background-color: rgb(255, 255, 255);
+            margin: 0 3px;
+            cursor: pointer;
+            border: 1px solid rgb(230, 139, 154);
         }
 
-        .hideONBOX {
-            display: none;
-        }
-
-        .showONBOX {
-            display: block;
-        }
+        
 
         .delbutton {
-            background-color: rgb(255, 193, 193);
+            background-color: rgb(253, 199, 199);
             width: 21px;
             height: 21px;
             border-radius: 100%;
@@ -105,8 +129,20 @@
             border: 1px solid white;
             color: rgb(110, 110, 110);
         }
+        .delbutton1 {
+            background-color: rgb(252, 146, 173);
+            width: 21px;
+            height: 21px;
+            border-radius: 100%;
+            cursor: pointer;
+            border: 1px solid rgb(248, 164, 164);
+            color: rgb(0, 0, 0);
+            box-shadow: 1px 1px rgb(168, 166, 166);
+        }
+        button:focus{outline: none;}
+
             
-        #end1{background-color: rgb(223, 222, 222); height:60px; margin-top:24%; width:99%;}
+        #end1{background-color: rgb(197, 195, 195); height:70px; margin-top:20%; width:99%;}
     </style>
 </head>
 
@@ -115,16 +151,16 @@
         <div class="headerMain">
             <img src="main_logo2.jpg" alt="" id="mainlogo">
         </div>
-        <div class="headerB">
+        <div class="headerB" onmouseover="this.className='headerB1'" onmouseout="this.className='headerB'">
             <a href="index.html">Home</a>
         </div>
-        <div class="headerB">
+        <div class="headerB" onmouseover="this.className='headerB1'" onmouseout="this.className='headerB'">
             <a href="sales.html">Sales</a>
         </div>
 
-        <div class="header" onClick="logIn();" id="logcursor">
+        <div class="headerS" onClick="logIn();" id="logcursor" onmouseover="this.className='headerS1'" onmouseout="this.className='headerS'">
             <i class="fa fa-user-circle"></i> Login </div>
-        <div class="header">
+        <div class="header" onmouseover="this.className='header1'" onmouseout="this.className='header'" >
             <a href="addtocart.html">
                 <i class="fa fa-cart-plus"></i> Cart
                 <span>(<b id="showItemsNum">0</b>)</span>
@@ -151,8 +187,8 @@
             <tfoot id="tableFoot"></tfoot>
         </table>
     </div>
-    <div id="ONbutton">
-        <div id="oder-now-button" class="hideONBOX">
+    <div >
+        <div id="oder-now-button" class="hideONBOX" onfocus="this.className='oder-now-button';"onmouseover="this.className='order-now-button'" onmouseout="this.className='showONBOX'">
             <a href="checkOut.html">Order Now</a>
         </div>
     </div>
@@ -162,22 +198,20 @@
 
     <!-- *****End**** -->
     <div id="end1">
-        <div id="e">
-
-            <div class="e">
-                <a href="aboutUs.html">About us</a>
-            </div>
-            <div class="e">
-                <a href="javaScript:void(0)" onClick="contactbox();">Contact us</a>
-                <br>
-                <div id="cBox" class="hide">
-                    <div>
-                        <a href="mailto:mishasfashionstore.com">Email</a>
-                    </div>
+            <div id="e">
+    
+                <div class="e" onmouseover="this.className='e1'" onmouseout="this.className='e'">
+                    <a href="aboutUs.html">About us</a>
                 </div>
+    
+                <div class="e" onmouseover="this.className='e1'" onmouseout="this.className='e'">
+                    <a href="javaScript:void(0)" onClick="contactbox();">Contact us</a>
+                </div>
+                <span id="cBox" class="hide" onmouseover="this.className='showEmail2'" onmouseout="this.className='showEmail'">
+                    <a href="mailto:mishasfashionstore@gmail.com">Email</a>
+                </span>
             </div>
         </div>
-    </div>
 </body>
 <script>
     
@@ -197,7 +231,7 @@
         var totalPrice = 0;
         for (var i = 0; i < cartItems.length; i++) {
 
-            document.getElementById("tableBody").innerHTML += "<tr> <td> <img src='images/" + cartItems[i].image + "' id='imageWH'></td><td>" + cartItems[i].name + "</td><td><button class='inDecButton'  onclick='decQuantity(" + i + ")'><i class='fa fa-minus'></i></button>" + cartItems[i].quantity + "<button class='inDecButton' onclick='increQuantity(" + i + ")'><i class='fa fa-plus'></i></button></td><td>" + cartItems[i].price * cartItems[i].quantity + "/-</td><td class='emptyTd'> <button class='delbutton'  onclick='delItem(" + i + ");'>x</button></td>"
+            document.getElementById("tableBody").innerHTML += "<tr> <td> <img src='images/" + cartItems[i].image + "' id='imageWH'></td><td>" + cartItems[i].name + "</td><td><button class='inDecButton' onmouseover='this.className=`inDecButton1`' onmouseout='this.className=`inDecButton`'  onclick='decQuantity(" + i + ")'><i class='fa fa-minus'></i></button>" + cartItems[i].quantity + "<button class='inDecButton' onmouseover='this.className=`inDecButton1`' onmouseout='this.className=`inDecButton`' onclick='increQuantity(" + i + ")'><i class='fa fa-plus'></i></button></td><td>" + cartItems[i].price * cartItems[i].quantity + "/-</td><td class='emptyTd'> <button class='delbutton' onmouseover='this.className= `delbutton1`' onmouseout='this.className= `delbutton`'  onclick='delItem(" + i + ");'>x</button></td>"
             totalItems += cartItems[i].quantity;
             totalPrice += cartItems[i].quantity * cartItems[i].price;
         }

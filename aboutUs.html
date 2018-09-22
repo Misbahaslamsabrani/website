@@ -13,8 +13,8 @@
     #aubox{
         text-align: center; margin-top: 30px;
     }
-    #auheading{ font-size: 26px; text-align: center; font-family: "Monotype Corsiva"}
-    #fullPage{width: 92%;  margin:10px auto; font-size: 18px;}
+    #auheading{ width: 91%; margin: 0 auto; border-bottom: 3px dashed pink; font-size: 35px; text-align: center; font-family: "Monotype Corsiva";}
+    #fullPage{width: 90%;  margin:10px auto; font-size: 18px;}
     </style>
 </head>
 <body>
@@ -22,18 +22,17 @@
         <div class="headerMain">
             <img src="main_logo2.jpg" alt="" id="mainlogo">
         </div>
-        <div class="headerB">
+        <div class="headerB" onmouseover="this.className='headerB1'" onmouseout="this.className='headerB'">
             <a href="index.html">Home</a>
         </div>
-        <div class="headerB">
+        <div class="headerB" onmouseover="this.className='headerB1'" onmouseout="this.className='headerB'">
             <a href="sales.html">Sales</a>
         </div>
         
-        <div class="header" onClick="logIn();" id="logcursor">
+        <div class="headerS" onClick="logIn();" id="logcursor"onmouseover="this.className='headerS1'" onmouseout="this.className='headerS'">
             <i class="fa fa-user-circle"></i> Login </div>
-        <div class="header">
+        <div class="header" onmouseover="this.className='header1'" onmouseout="this.className='header'" >
                 <a href="addtocart.html"><i class="fa fa-cart-plus"></i> Cart<span>(<b id="showItemsNum">0</b>)</span></a>
-
         </div>
         <div id="line"></div>
     </div>
@@ -50,5 +49,19 @@
         Never Ending Inventory: Misha's Fashion Store has one of the biggest inventories that has products under different categories like hand bags,scandles,makeup, shoes, jewelry and many more. Well its like Home Shopping has almost every other product, you name them and they have it. <br> <br>
         I hope whatever written above has answered all of your questions that you been waiting for them to be answered. MFS is dedicated and committed in providing you the best online experience that you will never forget. The Misha’s Fashion Store team of representative is also available to answer queries so if I did miss out on something then you are always welcome to give us a ring and they will definitely be able to satisfy you. So, don’t hesitate and give it a try, we are ready to end any kind of stereotypes that you have heard about online shopping, and place your order now at Misha's Fashion Store. I assure you that we won’t let you down.
     </div>
+    <div id="end">
+            <div id="e">
+    
+                <div class="e" onmouseover="this.className='e1'" onmouseout="this.className='e'">
+                    <a href="aboutUs.html">About us</a>
+                </div>
+    
+                <div class="e" onmouseover="this.className='e1'" onmouseout="this.className='e'">
+                    <a href="javaScript:void(0)" onClick="contactbox();">Contact us</a>
+                </div>
+                <span id="cBox" class="hide" onmouseover="this.className='showEmail2'" onmouseout="this.className='showEmail'">
+                    <a href="mailto:mishasfashionstore@gmail.com">Email</a>
+                </span></div>
+        </div>
 </body>
 </html>

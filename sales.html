@@ -12,11 +12,14 @@
     <script src="main.js"></script>
     <script src="addtoWishList.js"></script>
     <style>
-        
-
         a {
             text-decoration: none;
             color: rgb(8, 8, 8)
+        }
+
+        #saleMain {
+            margin-top: 20px;
+            border: 1px solid pink;
         }
     </style>
 
@@ -27,17 +30,17 @@
         <div class="headerMain">
             <img src="main_logo2.jpg" alt="" id="mainlogo">
         </div>
-        <div class="headerB">
+        <div class="headerB" onmouseover="this.className='headerB1'" onmouseout="this.className='headerB'">
             <a href="index.html">Home</a>
         </div>
-        <div class="headerB">
+        <div class="headerB" onmouseover="this.className='headerB1'" onmouseout="this.className='headerB'">
             <a href="sales.html">Sales</a>
         </div>
 
-        <div class="header" onClick="logIn();" id="logcursor">
+        <div class="headerS" onClick="logIn();" id="logcursor" onmouseover="this.className='headerS1'" onmouseout="this.className='headerS'">
             <i class="fa fa-user-circle"></i> Login </div>
-        <div class="header">
-                <a href="addtocart.html"><i class="fa fa-cart-plus"></i> Cart <span>(<b id="showItemsNum">0</b>)</span></a>
+        <div class="header" onmouseover="this.className='header1'" onmouseout="this.className='header'">
+            <a href="addtocart.html"><i class="fa fa-cart-plus"></i> Cart <span>(<b id="showItemsNum">0</b>)</span></a>
 
         </div>
         <div id="line"></div>
@@ -46,17 +49,17 @@
 
 
     <!-- *****Body***** -->
-    
-    <div>
+
+    <div id="saleMain">
         <div class="in-bl" onmouseover="showButtons(37)" onmouseout="hideButtons(37)">
             <div>
                 <img src="images/sale1.jpg" class="WH4">
             </div>
             <div>`
                 <span> Denim Jacket
-                    <br> <s>Rs 1000/-</s>  &nbsp;  Rs 930/-</span>
+                    <br> <s>Rs 1000/-</s> &nbsp; Rs 930/-</span>
                 <span class="hide" id="BOX37">
-                    
+
                     <span class="addtocartbu" id="AddToCart36">
                         <a href="JavaScript:void(0)" onclick="incrementItem(36); changeBG(36);">Add to Cart</a>
                     </span>
@@ -69,55 +72,54 @@
             </div>
             <div>
                 <span> Nail Polish
-                    <br> <s>Rs 500/-</s>  &nbsp;  Rs 300/-</span>
+                    <br> <s>Rs 500/-</s> &nbsp; Rs 300/-</span>
                 <span class="hide" id="BOX38">
-                    
+
                     <span class="addtocartbu" id="AddToCart37">
                         <a href="JavaScript:void(0)" onclick="incrementItem(37); changeBG(37);">Add to Cart</a>
                     </span>
                 </span>
             </div>
         </div>
-            <div class="in-bl" onmouseover="showButtons(39)" onmouseout="hideButtons(39)">
-                <div>
-                    <img src="images/sale3.jpg" class="WH4">
-                </div>
-                <div>
-                    <span> HandBag
-                        <br> <s>Rs 800/-</s>  &nbsp;  Rs 590/-</span>
-                    <span class="hide" id="BOX39">
-                        
-                        <span class="addtocartbu" id="AddToCart38">
-                            <a href="JavaScript:void(0)" onclick="incrementItem(38); changeBG(38);">Add to Cart</a>
-                        </span>
-                    </span>
-                </div>
-        
-
-    </div>
-    
-    
-
-
-
-
-
-    <!-- *****End**** -->
-    <div id="end">
-        <div id="e">
-            
-            <div class="e">
-                <a href="aboutUs.html">About us</a>
+        <div class="in-bl" onmouseover="showButtons(39)" onmouseout="hideButtons(39)">
+            <div>
+                <img src="images/sale3.jpg" class="WH4">
             </div>
-            <div class="e">
-                <a href="javaScript:void(0)" onClick="contactbox();">Contact us</a>
-                <br>
-                <div id="cBox" class="hide">
-                <div><a href="mailto:mishasfashionstore.com">Email</a></div>
+            <div>
+                <span> HandBag
+                    <br> <s>Rs 800/-</s> &nbsp; Rs 590/-</span>
+                <span class="hide" id="BOX39">
+
+                    <span class="addtocartbu" id="AddToCart38">
+                        <a href="JavaScript:void(0)" onclick="incrementItem(38); changeBG(38);">Add to Cart</a>
+                    </span>
+                </span>
+            </div>
+
+        </div>
+
+
+
+
+
+
+
+        <!-- *****End**** -->
+        <div id="end">
+            <div id="e">
+
+                <div class="e" onmouseover="this.className='e1'" onmouseout="this.className='e'">
+                    <a href="aboutUs.html">About us</a>
                 </div>
+
+                <div class="e" onmouseover="this.className='e1'" onmouseout="this.className='e'">
+                    <a href="javaScript:void(0)" onClick="contactbox();">Contact us</a>
+                </div>
+                <span id="cBox" class="hide" onmouseover="this.className='showEmail2'" onmouseout="this.className='showEmail'">
+                    <a href="mailto:mishasfashionstore@gmail.com">Email</a>
+                </span>
             </div>
         </div>
-    </div>
 </body>
 
 </html>

@@ -1,9 +1,34 @@
 .header,.headerMain, .headerB{display: inline-block;}
-#mainlogo{height: 300px; width: 100%;}
+#mainlogo{height: 300px; width: 100%;};
+.headerMain{margin-right: 4%; width: 54%;}
 
-.header{margin: 1% 2%; height: 30px; font-size: 22px; }
-.headerMain{margin-right: 3%; width: 54%;}
-.headerB{margin: 1% 2%; height: 30px; font-size: 22px;}
+.header{width: 145px; margin: 20px 8px; height: 30px; font-size: 30px; 
+    font-family: Brush Script MT;  display: inline-block; text-align: center;} 
+.headerB{ width: 70px; margin: 20px 8px; height: 30px; font-size: 30px; 
+font-family: Brush Script MT; display: inline-block; text-align: center;}
+.headerS{ width: 120px; margin: 20px 8px; height: 30px; font-size: 30px; 
+    font-family: Brush Script MT;  display: inline-block; text-align: center;}
+
+    /* okay let me check  */
+.headerB1{width: 70px; margin: 20px 8px; height: 30px; font-size: 30px; 
+        font-family: Brush Script MT; display: inline-block; text-align: center; 
+         box-shadow: 2px 2px 8px 2px rgb(252, 220, 220);  
+        background-color: rgba(255, 210, 217, 0.644);
+        border: 1px solid none; border-radius: 4px;}
+
+.headerS1{width: 120px; margin: 20px 8px; height: 30px; font-size: 30px; 
+        font-family: Brush Script MT;  display: inline-block; text-align: center;
+        box-shadow: 2px 2px 8px 2px rgb(252, 220, 220);  
+        background-color: rgba(255, 210, 217, 0.644);
+        border: 1px solid none; border-radius: 4px;}
+
+.header1{width: 145px; margin: 20px 8px; height: 30px; font-size: 30px; 
+        font-family: Brush Script MT;  display: inline-block; text-align: center;
+        box-shadow: 2px 2px 8px 2px rgb(252, 220, 220); 
+        background-color: rgba(255, 210, 217, 0.644);
+        border: 1px solid none; border-radius: 4px;} 
+    
+
 #line{border-top: 2px solid black;}
 a {
     text-decoration: none;
@@ -34,6 +59,8 @@ a {
 .side{float:right;}
 .addtocartbu{display:inline-block; margin:0 10px; border: 2px solid pink; width:100px; 
     text-align:center; }
+.addtocartbu1{display:inline-block; margin:0 10px; border: 2px outset pink; width:100px; 
+        text-align:center; }
 .addtocartbutton{display:inline-block; margin:0 10px; border: 2px solid  rgb(250, 212, 212);; width:100px; 
     text-align:center; background-color: rgb(255, 220, 220);}
 .WH{width: 300px; height: 300px;}
@@ -67,8 +94,26 @@ a {
 
 
   /* End */  
-#end{background-color: rgb(223, 222, 222); height:60px; margin-top:2%; width:99%;}
-#e{width: 189px; margin-left: 80%;  }
-.e{display: inline-block; margin-right: 10%; font-size: 18px; margin-top:5%;  
+#end{background-color: rgb(197, 195, 195); height:70px; margin-top:2%; width:99%;}
+ #e{ margin-left: 77%;} 
+ #eee{display: inline-block;} 
+.e{ width: 85px; text-align: center; display: inline-block; margin-right: 10px; font-size: 18px; margin-top:5%;  
     vertical-align: top;}
-#cBox{text-align: center}
+.e1{width: 85px; text-align: center;display: inline-block; margin-right: 10px;
+     font-size: 18px; margin-top:5%;  
+        vertical-align: top; border: 2px solid grey; box-shadow: 2px 2px 20px grey;}
+
+/* #cBox{text-align: center; width: 85px; text-align: center; font-size: 18px;  margin-top: 5%; 
+    vertical-align: top; } */
+
+.showEmail{
+    text-align: center; width: 85px; text-align: center; font-size: 18px;  margin-top: 5%; 
+        vertical-align: top; 
+    display: inline-block;
+}
+.showEmail2{
+    text-align: center; width: 85px; text-align: center; font-size: 18px;  margin-top: 5%; 
+    vertical-align: top; 
+    display: inline-block;
+    border: 2px solid grey; box-shadow: 2px 2px 20px grey;
+}

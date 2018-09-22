@@ -24,13 +24,12 @@
             background-color: rgb(255, 213, 221)
         }
 
-        .o {
-            display: block;
-            margin-top: 30px;
-            font-size: 20px;
+        #backbu {
+            margin-left: 10px;
+            margin-top: 10px;
         }
-
-        #bu {
+        
+        #bu{
             display: block;
             margin-top: 15%;
             margin-left: 50%;
@@ -43,60 +42,105 @@
             font-size: 16px;
             cursor: pointer;
         }
-
-         #a {
-            width: 54%;
-            margin: 50px auto 5px;
+        #bu1{
+            display: block;
+            margin-top: 15%;
+            margin-left: 50%;
+            margin-bottom: 6%;
             
-
-        } 
-
-        #backbu {
-            margin-left: 10px;
-            margin-top: 10px;
+            background-color: white; 
+            border: 2px solid rgb(71, 67, 69);
+            box-shadow: 1px 1px 5px 1px rgb(151, 151, 151);
+            width: 75px;
+            height: 30px;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
         }
+        button:active{border:none; outline: none;}
+        #bu:focus{outline: none;}
 
-        a {
+
+        /* for any link */
+        a{
             text-decoration: none;
             color: black;
         }
-
+        
         /* message box */
-
         .showmessaBox {
-
             margin: 0 auto;
-            width: 95%;
-            height: 50px;
+            width: 80%;
+            height: 45px;
             text-align: center;
-
-            font-size: 18px;
-            color: black;
-            background-color: rgb(240, 240, 240);
-            border: 1px solid rgb(250, 220, 230);
-            border-radius: 10px;
-
-        }
+            color: red;
+            border: 1px solid rgba(226, 225, 225, 0.883);
+            background-color: rgba(226, 225, 225, 0.883);
+            border-radius: 25px;
+            font-size: 20px;
+            }
+            .showmessaBox1 {
+            margin: 0 auto;
+            width: 80%;
+            height: 45px;
+            text-align: center;
+            color: rgb(241, 95, 127); ;
+            border: 1px solid rgba(226, 225, 225, 0.883);
+            background-color: rgba(226, 225, 225, 0.883);
+            border-radius: 25px;
+            font-size: 25px;
+            }
 
         #messBoxT {
             display: inline-block;
-            margin: 13px 5px 0 0;
-            width: 260px;
-        }
+            margin: 12px 0 0 ;
+            width: 270px;
+            
+            text-align: center;
+            border: 1px solid rgba(226, 225, 225, 0.883);
+            
+            }
 
         #messaBoxBu {
             background: none;
-            border: 1px solid rgb(245, 241, 243);
+            border: 1px solid rgba(226, 225, 225, 0.883);
             vertical-align: top;
             margin-top: 2%;
             cursor: pointer;
-            margin-left:3%;
+            color: grey;
+        }
+        #messaBoxBu1 {
+            background: none;;
+            border: 1px solid rgba(226, 225, 225, 0.883);
+            vertical-align: top;
+            margin-top: 2%;
+            cursor: pointer;
+            color: black;
         }
 
         .hideMe {
             display: none;
         }
-        #email,#name, #pass{border: 1px solid rgb(92, 86, 86); width: 77%}
+        
+
+        .o {
+            display: block;
+            margin-top: 30px;
+            font-size: 20px;
+        }
+         #a {
+            width: 54%;
+            margin: 50px auto 5px;}
+            
+        .input-field-c{border: 1px solid rgb(199, 197, 197); width: 77%;}
+
+       #pass:hover{border: 1px solid rgb(53, 53, 53); outline:none; border-radius: 2px; }
+       #email:hover{border: 1px solid rgb(53, 53, 53); outline:none;  border-radius: 2px; }
+       #name:hover{border: 1px solid rgb(53, 53, 53); outline:none;  border-radius: 2px;}
+       #pass:focus{border: 1px solid rgb(53,53, 53); outline:none; border-radius: 2px;}
+       #email:focus{border: 1px solid rgb(53, 53, 53); outline:none;border-radius: 2px;}
+       #name:focus{border: 1px solid rgb(53, 53, 53); outline:none;border-radius: 2px;}
+
     </style>
 </head>
 
@@ -110,22 +154,28 @@
                 <label for="name" class="o">Name: </label>
                 <br>
                 <i class="fa fa-user"> </i>
-                <input type="text" id="name" onBlur='checkName(id);'>
+
+                <input type="text" id="name" class="input-field-c" onBlur='checkName(id);'>
+
                 <label for="email" class="o">Email: </label>
                 <br>
                 <i class="fa fa-envelope"></i>
-                <input type="text" id="email" onBlur='checkEmail(id);'>
+
+                <input type="text" id="email" class="input-field-c" onBlur='checkEmail(id);'>
+
                 <label for="pass" class="o">Password: </label>
                 <br>
                 <i class="fa fa-eye-slash"></i>
-                <input type="password" id="pass" onBlur='checkPass(id);'>
-                <input type="submit" id="bu" value="LogIn">
+
+                <input type="password" id="pass" class="input-field-c" onBlur='checkPass(id);'>
+
+                <input type="submit" id="bu" value="LogIn" onfocus="this.id='bu'" onmouseover="this.id='bu1'" onmouseout="this.id='bu'">
 
             </form>
         </div>
         <div id="messaBox" class="hideMe">
             <span id="messBoxT"></span>
-            <button id="messaBoxBu" onclick="hideMe();">
+            <button id="messaBoxBu" onclick="hideMe();" onmouseover="this.id='messaBoxBu1'" onmouseout="this.id='messaBoxBu'">
                 <i class="fa fa-times"></i>
             </button>
         </div>
@@ -140,11 +190,11 @@
         let mess = "";
         if (a && b && c) {
             mess = "LogIn Successful!!";
-            messaBox.className = "showmessaBox";
+            messaBox.className = "showmessaBox1";
             location.href = "index.html"
         }
         else {
-            mess = "Sorry can't LogIn!!"
+            mess = "Sorry, can't login."
             messaBox.className = "showmessaBox";
         }
         document.getElementById("messBoxT").innerHTML = mess;
@@ -157,19 +207,19 @@
         let m = false;
         let message = "";
         if(!email){
-            message = "Email Address required!";
+            message = "Email address required.";
             m = true;
         }
         else if (email.indexOf("@") == -1) {
-            message = "Valid Email Address Required!"
+            message = "Valid email address required."
             m = true;
         }
         else if(email.indexOf(".com") == -1){
-            message = "Valid Email Address Required!"
+            message = "Valid email address required."
             m = true;
         }
         else if(email.indexOf(" ") !== -1){
-            message = "Space not allowed";
+            message = "Space not allowed.";
             m = true;
         }
         else {
@@ -190,14 +240,14 @@
         let message = "";
         let m = false;
         if(!name){
-            message = "Name Required!";
+            message = "Name required.";
             m = true;
         }
         
         else {m = false;}
         for(var i = 0; i<name.length; i++){
            if((name.charCodeAt(i) >=48 && name.charCodeAt(i) <=57)){
-            message = "Only Alphabets Allowed"
+            message = "Only alphabets are allowed."
             m = true;
             }
         }
@@ -215,11 +265,11 @@
         let message = "";
         let m = false;
         if(!pass){
-            message  = "Password Required!";
+            message  = "Password required.";
             m = true;
         }
         else if(pass.indexOf(" ") !== -1){
-            message = "Spaces not allowed!";
+            message = "Space not allowed.";
             m = true;
         }
         else {m = false;}

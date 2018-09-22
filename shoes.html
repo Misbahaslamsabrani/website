@@ -17,16 +17,16 @@
         <div class="headerMain">
             <img src="main_logo2.jpg" alt="" id="mainlogo">
         </div>
-        <div class="headerB">
+        <div class="headerB" onmouseover="this.className='headerB1'" onmouseout="this.className='headerB'">
             <a href="index.html">Home</a>
         </div>
-        <div class="headerB">
+        <div class="headerB" onmouseover="this.className='headerB1'" onmouseout="this.className='headerB'">
             <a href="sales.html">Sales</a>
         </div>
 
-        <div class="header" onClick="logIn();" id="logcursor">
+        <div class="headerS" onClick="logIn();" id="logcursor" onmouseover="this.className='headerS1'" onmouseout="this.className='headerS'">
             <i class="fa fa-user-circle"></i> Login </div>
-        <div class="header">
+        <div class="header" onmouseover="this.className='header1'" onmouseout="this.className='header'" >
                 <a href="addtocart.html"><i class="fa fa-cart-plus"></i> Cart<span>(<b id="showItemsNum">0</b>)</span></a>
 
         </div>
@@ -163,22 +163,20 @@
 
     <!-- ******end*****-->
     <div id="end">
-        <div id="e">
-            
-            <div class="e">
-                <a href="aboutUs.html">About us</a>
-            </div>
-            <div class="e">
-                <a href="javaScript:void(0)" onClick="contactbox();">Contact us</a>
-                <br>
-                <div id="cBox" class="hide">
-                    <div>
-                        <a href="mailto:mishasfashionstore.com">Email</a>
-                    </div>
+            <div id="e">
+    
+                <div class="e" onmouseover="this.className='e1'" onmouseout="this.className='e'">
+                    <a href="aboutUs.html">About us</a>
                 </div>
+    
+                <div class="e" onmouseover="this.className='e1'" onmouseout="this.className='e'">
+                    <a href="javaScript:void(0)" onClick="contactbox();">Contact us</a>
+                </div>
+                <span id="cBox" class="hide" onmouseover="this.className='showEmail2'" onmouseout="this.className='showEmail'">
+                    <a href="mailto:mishasfashionstore@gmail.com">Email</a>
+                </span>
             </div>
         </div>
-    </div>
 </body>
 
 </html>

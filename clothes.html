@@ -15,32 +15,39 @@
 </head>
 
 <body>
-    <div id="a">
-        <div class="headerMain">
-            <img src="main_logo2.jpg" alt="" id="mainlogo">
-        </div>
-        <div class="headerB" onmouseover="this.className='headerB1'" onmouseout="this.className='headerB'">
-            <a href="index.html">Home</a>
-        </div>
-        <div class="headerB" onmouseover="this.className='headerB1'" onmouseout="this.className='headerB'">
-            <a href="sales.html">Sales</a>
-        </div>
+        <div id="a">
+                <div class="headerMain">
+                    <span class="misha">Misha's </span><span class="fashion">Fashion</span>
+                    <span class="store"> Store</span>
+                </div>
+                <div class="headerMain2">
+                <div class="headerB" >
+                    <a href="index.html">Home</a>
+                </div>
+                <div class="headerB" >
+                    <a href="sales.html">Sales</a>
+                </div>
         
-        <div class="headerS" onClick="logIn();" id="logcursor" onmouseover="this.className='headerS1'" onmouseout="this.className='headerS'">
-            <i class="fa fa-user-circle"></i> Login </div>
-        <div class="header" onmouseover="this.className='header1'" onmouseout="this.className='header'" >
-                <a href="addtocart.html"><i class="fa fa-cart-plus"></i> Cart<span>(<b id="showItemsNum">0</b>)</span></a>
-
+                <div class="headerS" onClick="logIn();" id="logcursor" >
+                    <i class="fa fa-user-circle"></i> Login </div>
+                <div class="header"  >
+                    <a href="addtocart.html">
+                        <i class="fa fa-cart-plus"></i> Cart
+                        <span>(<b id="showItemsNum">0</b>)</span>
+                    </a>
+        
+                </div>
+                </div>
         </div>
-        <div id="line"></div>
-    </div>
+                <div id="line"></div>
     <!-- ******** body ******** -->
 
 
     <!-- jeans -->
     <div class="boxes">
         <div class="backbutton">
-            <a href="javaScript:void(0)" class="fa fa-chevron-left" onclick="backpage();"></a>
+            <a href="javaScript:void(0)" class="fa fa-chevron-left" 
+            onclick="backpage();"></a>
         </div>
         <div id="jeans" class="headings">Jeans</div>
         <br>
@@ -48,13 +55,13 @@
             <div>
                 <img src="images/jeans1.jpg" class="WH4">
             </div>
-            <div>
+            <div class="priceTag">
                 <span>Light Blue Jeans
                     <br> Rs 600/-</span>
-                <span class="hide" id="BOX1">
-                    
+                    <span class="hide" id="BOX1">
                     <span class="addtocartbu" id="AddToCart0">
-                        <a href="JavaScript:void(0)" onclick="incrementItem(0); changeBG(0); " >Add to Cart</a>
+                        <a href="JavaScript:void(0)" onclick="incrementItem(0); 
+                        changeBG(0); " >Add to Cart</a>
                     </span>
                 </span>
             </div>
@@ -63,7 +70,7 @@
             <div>
                 <img src="images/jeans2.jpg" class="WH4">
             </div>
-            <div>
+            <div class="priceTag">
                 <span> Black Jeans
                     <br> Rs 450/-</span>
                 <span class="hide" id="BOX2">
@@ -78,7 +85,8 @@
             <div>
                 <img src="images/jeans3.jpg" class="WH4">
             </div>
-            <div>
+            <div >
+                    <div class="priceTag">
                 <span> Dark Blue Jeans
                     <br> Rs 500/-</span>
                 <span class="hide" id="BOX3">
@@ -90,7 +98,7 @@
             </div>
         </div>
     </div>
-
+</div>
     <!-- Shirts -->
     <div class="boxes">
         <div class="backbutton">
@@ -102,7 +110,7 @@
             <div>
                 <img src="images/sh1.jpg" class="WH">
             </div>
-            <div>
+            <div class="priceTag">
                 <span>Shirt 1
                     <br> Rs 400/-</span>
                 <span class="hide" id="BOX4">
@@ -117,7 +125,7 @@
             <div>
                 <img src="images/sh2.jpg" class="WH">
             </div>
-            <div>
+            <div class="priceTag">
                 <span>Shirt 2
                     <br> Rs 500/-</span>
                 <span class="hide" id="BOX5">
@@ -132,7 +140,7 @@
             <div>
                 <img src="images/sh3.jpg" class="WH">
             </div>
-            <div>
+            <div class="priceTag">
                 <span> Shirt 3
                     <br> Rs 550/-</span>
                 <span class="hide" id="BOX6">
@@ -158,7 +166,7 @@
             <div>
                 <img src="images/d1.jpg">
             </div>
-            <div>
+            <div class="priceTag">
                 <span>Denim Jacket 1
                     <br>Rs 550/-</span>
                 <span class="hide" id="BOX7">
@@ -173,7 +181,7 @@
             <div>
                 <img src="images/d2.jpg">
             </div>
-            <div>
+            <div class="priceTag">
                 <span> Denim Jacket 2
                     <br>Rs 500/-</span>
                 <span class="hide" id="BOX8">
@@ -188,13 +196,14 @@
             <div>
                 <img src="images/d3.jpg">
             </div>
-            <div>
+            <div class="priceTag">
                 <span>Denim Jacket 3
                     <br> Rs 700/-</span>
                 <span class="hide" id="BOX9">
                     
                     <span class="addtocartbu" id="AddToCart8">
-                        <a href="JavaScript:void(0)" onclick="incrementItem(8); changeBG(8);">Add to Cart</a>
+                        <a href="JavaScript:void(0)" 
+                        onclick="incrementItem(8); changeBG(8);">Add to Cart</a>
                     </span>
                 </span>
             </div>

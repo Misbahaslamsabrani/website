@@ -14,25 +14,31 @@
 </head>
 
 <body>
-    <div id="a">
-        <div class="headerMain">
-            <img src="main_logo2.jpg" alt="" id="mainlogo">
+        <div id="a">
+                <div class="headerMain">
+                    <span class="misha">Misha's </span><span class="fashion">Fashion</span>
+                    <span class="store"> Store</span>
+                </div>
+                <div class="headerMain2">
+                <div class="headerB" >
+                    <a href="index.html">Home</a>
+                </div>
+                <div class="headerB" >
+                    <a href="sales.html">Sales</a>
+                </div>
+        
+                <div class="headerS" onClick="logIn();" id="logcursor" >
+                    <i class="fa fa-user-circle"></i> Login </div>
+                <div class="header"  >
+                    <a href="addtocart.html">
+                        <i class="fa fa-cart-plus"></i> Cart
+                        <span>(<b id="showItemsNum">0</b>)</span>
+                    </a>
+        
+                </div>
+                </div>
         </div>
-        <div class="headerB" onmouseover="this.className='headerB1'" onmouseout="this.className='headerB'">
-            <a href="index.html">Home</a>
-        </div>
-        <div class="headerB" onmouseover="this.className='headerB1'" onmouseout="this.className='headerB'">
-            <a href="sales.html">Sales</a>
-        </div>
-
-        <div class="headerS" onClick="logIn();" id="logcursor" onmouseover="this.className='headerS1'" onmouseout="this.className='headerS'">
-            <i class="fa fa-user-circle"></i> Login </div>
-        <div class="header" onmouseover="this.className='header1'" onmouseout="this.className='header'" >
-                <a href="addtocart.html"><i class="fa fa-cart-plus"></i> Cart<span>(<b id="showItemsNum">0</b>)</span></a>
-
-        </div>
-        <div id="line"></div>
-    </div>
+                <div id="line"></div>
 
     <!-- *****body***** -->
 
@@ -46,7 +52,7 @@
             <div>
                 <img src="images/es1.jpg" class="WH">
             </div>
-            <div>
+            <div class="priceTag">
                 <span> EyeShadow 1
                     <br> Rs 1000/-</span>
                     <span class="hide" id="BOX28">        
@@ -59,7 +65,7 @@
             <div>
                 <img src="images/es2.jpg" class="WH">
             </div>
-            <div>
+            <div class="priceTag">
                 <span> EyeShadow 2
                     <br> Rs 1000/-</span>
                     <span class="hide" id="BOX29">        
@@ -72,7 +78,7 @@
             <div>
                 <img src="images/es3.jpg" class="WH">
             </div>
-            <div>
+            <div class="priceTag">
                 <span> EyeShadow 3
                     <br> Rs 1000/-</span>
                     <span class="hide" id="BOX30">        
@@ -96,7 +102,7 @@
             <div>
                 <img src="images/lg1.jpg" class="WH">
             </div>
-            <div>
+            <div class="priceTag">
                 <span> Lip Gloss 1
                     <br> Rs 1000/-</span>
                     <span class="hide" id="BOX31">        
@@ -109,7 +115,7 @@
             <div>
                 <img src="images/lg2.jpg" class="WH">
             </div>
-            <div>
+            <div class="priceTag">
                 <span> Lip Gloss2
                     <br> Rs 1000/-</span>
                     <span class="hide" id="BOX32">        
@@ -122,7 +128,7 @@
             <div>
                 <img src="images/lg3.jpg" class="WH">
             </div>
-            <div>
+            <div class="priceTag">
                 <span> Lip Gloss 3
                     <br> Rs 1000/-</span>
                     <span class="hide" id="BOX33">        
@@ -143,7 +149,7 @@
             <div>
                 <img src="images/np1.jpg" class="WH4">
             </div>
-            <div>
+            <div class="priceTag">
                 <span> Nail Polish 1
                     <br> Rs 700/-</span>
                     <span class="hide" id="BOX34">        
@@ -156,7 +162,7 @@
             <div>
                 <img src="images/np2.jpg" class="WH4">
             </div>
-            <div>
+            <div class="priceTag">
                 <span> Nail Polish 2
                     <br> Rs 600/-</span>
                     <span class="hide" id="BOX35">        
@@ -169,7 +175,7 @@
             <div>
                 <img src="images/np3.jpg" class="WH4">
             </div>
-            <div>
+            <div class="priceTag">
                 <span> Nail Polish 3
                     <br> Rs 600/-</span>
                     <span class="hide" id="BOX36">       

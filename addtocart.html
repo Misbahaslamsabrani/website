@@ -48,8 +48,9 @@
         /* body styling */
 
         #mainCartBOX {
-            margin: 15px auto;
-            width: 46%;
+            margin: 40px auto;
+            width: 60%;
+
             
 
         }
@@ -61,13 +62,13 @@
         th {
             border-bottom: 1px solid rgb(245, 178, 178);
 
-            font-size: 20px;
+            font-size: 28px;
         }
 
         td {
             width: 9%;
             border-bottom: 1px solid pink;
-            font-size: 20px;
+            font-size: 23px;
 
         }
 
@@ -105,10 +106,10 @@
         }
 
         .inDecButton1{
-            background-color: rgb(250, 196, 221);
+            background-color: rgb(252, 146, 173);
             margin: 0 3px;
             cursor: pointer;
-            border: 1px solid rgb(233, 156, 169);
+            border: 1px solid ;
             box-shadow: 2px 2px 2px grey;
         }
         .inDecButton{
@@ -147,28 +148,31 @@
 </head>
 
 <body>
-    <div id="a">
-        <div class="headerMain">
-            <img src="main_logo2.jpg" alt="" id="mainlogo">
+        <div id="a">
+                <div class="headerMain">
+                    <span class="misha">Misha's </span><span class="fashion">Fashion</span>
+                    <span class="store"> Store</span>
+                </div>
+                <div class="headerMain2">
+                <div class="headerB" >
+                    <a href="index.html">Home</a>
+                </div>
+                <div class="headerB" >
+                    <a href="sales.html">Sales</a>
+                </div>
+        
+                <div class="headerS" onClick="logIn();" id="logcursor" >
+                    <i class="fa fa-user-circle"></i> Login </div>
+                <div class="header"  >
+                    <a href="addtocart.html">
+                        <i class="fa fa-cart-plus"></i> Cart
+                        <span>(<b id="showItemsNum">0</b>)</span>
+                    </a>
+        
+                </div>
+                </div>
         </div>
-        <div class="headerB" onmouseover="this.className='headerB1'" onmouseout="this.className='headerB'">
-            <a href="index.html">Home</a>
-        </div>
-        <div class="headerB" onmouseover="this.className='headerB1'" onmouseout="this.className='headerB'">
-            <a href="sales.html">Sales</a>
-        </div>
-
-        <div class="headerS" onClick="logIn();" id="logcursor" onmouseover="this.className='headerS1'" onmouseout="this.className='headerS'">
-            <i class="fa fa-user-circle"></i> Login </div>
-        <div class="header" onmouseover="this.className='header1'" onmouseout="this.className='header'" >
-            <a href="addtocart.html">
-                <i class="fa fa-cart-plus"></i> Cart
-                <span>(<b id="showItemsNum">0</b>)</span>
-            </a>
-
-        </div>
-        <div id="line"></div>
-    </div>
+                <div id="line"></div>
     <!-- *****Body**** -->
     <div id="mainCartBOX">
         <table id="mainTable">
@@ -231,7 +235,7 @@
         var totalPrice = 0;
         for (var i = 0; i < cartItems.length; i++) {
 
-            document.getElementById("tableBody").innerHTML += "<tr> <td> <img src='images/" + cartItems[i].image + "' id='imageWH'></td><td>" + cartItems[i].name + "</td><td><button class='inDecButton' onmouseover='this.className=`inDecButton1`' onmouseout='this.className=`inDecButton`'  onclick='decQuantity(" + i + ")'><i class='fa fa-minus'></i></button>" + cartItems[i].quantity + "<button class='inDecButton' onmouseover='this.className=`inDecButton1`' onmouseout='this.className=`inDecButton`' onclick='increQuantity(" + i + ")'><i class='fa fa-plus'></i></button></td><td>" + cartItems[i].price * cartItems[i].quantity + "/-</td><td class='emptyTd'> <button class='delbutton' onmouseover='this.className= `delbutton1`' onmouseout='this.className= `delbutton`'  onclick='delItem(" + i + ");'>x</button></td>"
+            document.getElementById("tableBody").innerHTML += "<tr> <td> <img src='images/" + cartItems[i].image + "' id='imageWH'></td><td>" + cartItems[i].name + "</td><td><button class='inDecButton' onmouseover='this.className=`inDecButton1`' onmouseout='this.className=`inDecButton`'  onclick='decQuantity(" + i + ")'><i class='fa fa-minus'></i></button> &nbsp;" + cartItems[i].quantity + "&nbsp; <button class='inDecButton' onmouseover='this.className=`inDecButton1`' onmouseout='this.className=`inDecButton`' onclick='increQuantity(" + i + ")'><i class='fa fa-plus'></i></button></td><td>" + cartItems[i].price * cartItems[i].quantity + "/-</td><td class='emptyTd'> <button class='delbutton' onmouseover='this.className= `delbutton1`' onmouseout='this.className= `delbutton`'  onclick='delItem(" + i + ");'>x</button></td>"
             totalItems += cartItems[i].quantity;
             totalPrice += cartItems[i].quantity * cartItems[i].price;
         }

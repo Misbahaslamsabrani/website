@@ -1,33 +1,21 @@
-.header,.headerMain, .headerB{display: inline-block;}
-#mainlogo{height: 300px; width: 100%;};
-.headerMain{margin-right: 4%; width: 54%;}
+body{ margin: 0;}
+#a{margin: 0;  width: 99%;}
 
-.header{width: 145px; margin: 20px 8px; height: 30px; font-size: 30px; 
-    font-family: Brush Script MT;  display: inline-block; text-align: center;} 
-.headerB{ width: 70px; margin: 20px 8px; height: 30px; font-size: 30px; 
-font-family: Brush Script MT; display: inline-block; text-align: center;}
-.headerS{ width: 120px; margin: 20px 8px; height: 30px; font-size: 30px; 
-    font-family: Brush Script MT;  display: inline-block; text-align: center;}
+.misha{font-size: 85px; font-family: arial; letter-spacing: 5px; font-weight:bold;font-style: italic; color: rgb(250, 111, 134);}
+.fashion{font-size: 85px; font-family: arial;letter-spacing: 5px; font-weight:bold; font-style: italic;}
+.store{font-size: 50px; font-family: arial;  font-weight:bold;}
+.headerMain{ margin-top: 10px; padding: 15px 0 5px 15px; width: 60%;}
+.headerMain2{ margin: 2% 0 1% 57%; width: 40%; }
 
-    /* okay let me check  */
-.headerB1{width: 70px; margin: 20px 8px; height: 30px; font-size: 30px; 
-        font-family: Brush Script MT; display: inline-block; text-align: center; 
-         box-shadow: 2px 2px 8px 2px rgb(252, 220, 220);  
-        background-color: rgba(255, 210, 217, 0.644);
-        border: 1px solid none; border-radius: 4px;}
+.header{ margin: 0 18px;  font-size: 40px; 
+    font-family: 'Monotype Corsiva';  display: inline-block; text-align: center;} 
+.headerB{  margin: 0 18px;  font-size: 40px;  
+font-family: 'Monotype Corsiva'; display: inline-block; text-align: center;}
+.headerS{  margin: 0 18px;  font-size: 40px; 
+    font-family: 'Monotype Corsiva';  display: inline-block; text-align: center;}
 
-.headerS1{width: 120px; margin: 20px 8px; height: 30px; font-size: 30px; 
-        font-family: Brush Script MT;  display: inline-block; text-align: center;
-        box-shadow: 2px 2px 8px 2px rgb(252, 220, 220);  
-        background-color: rgba(255, 210, 217, 0.644);
-        border: 1px solid none; border-radius: 4px;}
-
-.header1{width: 145px; margin: 20px 8px; height: 30px; font-size: 30px; 
-        font-family: Brush Script MT;  display: inline-block; text-align: center;
-        box-shadow: 2px 2px 8px 2px rgb(252, 220, 220); 
-        background-color: rgba(255, 210, 217, 0.644);
-        border: 1px solid none; border-radius: 4px;} 
-    
+     
+     
 
 #line{border-top: 2px solid black;}
 a {
@@ -47,22 +35,23 @@ a {
 }
 #logcursor{cursor: pointer;}
 
-.headings{font-size: 26px; font-weight: bold; 
-    width: 400px; margin: 10px; display: inline-block;
-    text-transform: capitalize; text-decoration: underline;}
+.headings{font-size: 140%; letter-spacing: 0.1em; font-weight: bold; 
+    width: 400px; margin: 1%; display: inline-block;
+    text-transform: uppercase; text-decoration: underline;}
+.priceTag{background: rgba(211, 208, 208, 0.5); height: 49px; font-size: 120%;}
 
 .boxes{ width:1300; border: 1px solid pink; margin: 30px auto; 
     border-radius: 12px; box-shadow: 5px 5px 15px pink;}
 
 .in-bl{display: inline-block; margin-left: 15px; border: 1px solid rgb(223, 221, 221);}
-/* box-shadow: 5px 5px 15px 5px grey; */
-.side{float:right;}
-.addtocartbu{display:inline-block; margin:0 10px; border: 2px solid pink; width:100px; 
-    text-align:center; }
-.addtocartbu1{display:inline-block; margin:0 10px; border: 2px outset pink; width:100px; 
-        text-align:center; }
-.addtocartbutton{display:inline-block; margin:0 10px; border: 2px solid  rgb(250, 212, 212);; width:100px; 
-    text-align:center; background-color: rgb(255, 220, 220);}
+
+.side{float:right; margin:0 10px 0 10px; 
+    box-shadow: 2px 1px 3px 2px rgba(255, 192, 203, 0.6) }
+.addtocartbu{display:inline-block; border: 2px solid rgb(248, 172, 185); width:100px; 
+    text-align:center;}
+
+.addtocartbutton{display:inline-block;  border: 2px solid  rgb(250, 161, 161); width:100px; 
+    text-align:center; background-color: rgb(253, 204, 204);}
 .WH{width: 300px; height: 300px;}
 .WH1{width: 350px; height: 400px;}
 .WH2{width: 400px; height: 370px;}
@@ -94,25 +83,26 @@ a {
 
 
   /* End */  
-#end{background-color: rgb(197, 195, 195); height:70px; margin-top:2%; width:99%;}
- #e{ margin-left: 77%;} 
+#end{background-color: rgba(197, 195, 195, 0.808); height:70px; margin-top:2%; width:100%;}
+ #e{ margin-left: 65%;} 
  #eee{display: inline-block;} 
-.e{ width: 85px; text-align: center; display: inline-block; margin-right: 10px; font-size: 18px; margin-top:5%;  
-    vertical-align: top;}
-.e1{width: 85px; text-align: center;display: inline-block; margin-right: 10px;
-     font-size: 18px; margin-top:5%;  
+.e{ width: 25%; text-align: center; display: inline-block; margin-right: 10px; 
+    font-size: 130%; margin-top:5%;  
+    vertical-align: top; }
+.e1{width: 25%; text-align: center;display: inline-block; margin-right: 10px;
+     font-size: 130%; margin-top:5%;  
         vertical-align: top; border: 2px solid grey; box-shadow: 2px 2px 20px grey;}
 
 /* #cBox{text-align: center; width: 85px; text-align: center; font-size: 18px;  margin-top: 5%; 
     vertical-align: top; } */
 
 .showEmail{
-    text-align: center; width: 85px; text-align: center; font-size: 18px;  margin-top: 5%; 
+    text-align: center; width: 25%; text-align: center; font-size: 130%;  margin-top: 5%; 
         vertical-align: top; 
     display: inline-block;
 }
 .showEmail2{
-    text-align: center; width: 85px; text-align: center; font-size: 18px;  margin-top: 5%; 
+    text-align: center; width: 25%; text-align: center; font-size: 130%;  margin-top: 5%; 
     vertical-align: top; 
     display: inline-block;
     border: 2px solid grey; box-shadow: 2px 2px 20px grey;

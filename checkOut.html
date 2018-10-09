@@ -9,11 +9,14 @@
     <title>Document</title>
     <style>
         
- /* body{background-color: rgba(248, 206, 213, 0.904);} */
+ 
         .fields {
             margin-left: 20px;
             border: 1px solid rgb(180, 163, 163);
             border-radius: 3px;
+            width: 50%;
+            height: 25px;
+            font-size: 20px;
         }
         .fields:focus{outline: none; border:1px solid rgb(12, 9, 9);}
         .fields:hover{outline: none; border:1px solid black;}
@@ -21,25 +24,30 @@
         #text-area:hover{outline:none; border: 1px solid black;}
 
         .conheadings {
-            width: 100px;
+            width: 150px;
             display: inline-block;
             margin-bottom: 10px;
+            font-size: 22px;
+            
         }
 
         #text-area {
-            width: 400px;
+            width: 500px;
             height: 100px;
             margin-bottom: 10px;
+            font-size: 22px;
             
         }
 
         .field1 {
             width: 40%;
             margin: 20px 5px;
-            border: 2px solid rgb(253, 186, 186);
+            border: 3px solid rgb(253, 186, 186);
+            
+            background-color: white;
             
         }
-        legend{font-size: 24px; border: 1px solid rgb(253, 178, 178); margin-bottom: 15px; font-family: Calibri;}
+        legend{ background-color: white; font-size: 29px; border: 1px solid rgb(253, 178, 178); margin-bottom: 15px; font-family: Calibri;}
 
         #conbudiv {
             width: 42%;
@@ -49,17 +57,19 @@
             border: 2px solid rgb(250, 170, 183);
             background-color: white;
             margin-left: 82%;
-            height: 30px;
+            height: 40px;
             border-radius: 5px;
             color:rgb(70, 67, 67);
+            font-size: 18px;
         }
         #conbu1{
             border: 2px solid rgb(250,170,183);
             background-color: white;
             margin-left: 82%;
-            height: 30px;
+            height: 40px;
             border-radius: 5px;
             color: black;
+            font-size: 18px;
             box-shadow: 2px 2px 5px 0 rgb(150, 150, 150);
         }
         #conbu1:focus{outline:none;}
@@ -70,7 +80,7 @@
         /* message Box */
         #conMessageBOX {
             text-align: center;
-            width: 300px;
+            width: 555px;
             display: inline-block;
             margin-top: 10px;
             border: 1px solid rgb(230, 227, 227);
@@ -79,9 +89,9 @@
 
         #main-message-box {
             border: 1px solid rgb(214, 214, 214);
-            width: 22%;
+            width: 40%;
             height: 45px;
-            margin-left: 3%;
+            margin-left: 1%;
             background-color: rgb(235, 231, 232);
             }
 
@@ -92,6 +102,7 @@
             margin-top: 2px;
             cursor: pointer;
             color: rgb(151, 150, 150);
+            border-radius: 100%; 
         }
         #cross-Button1 {
             background: none;
@@ -106,7 +117,7 @@
 
         .show1{
             display: block;
-            font-size: 18px;
+            font-size: 22px;
             color: red;
         }
         .show2{
@@ -124,6 +135,9 @@
         }
         button:active{outline: none;}
         button:focus{outline: none;}
+        
+        body{background-color: rgb(250, 220, 225)};
+        
     </style>
     
 </head>
@@ -171,6 +185,12 @@
                 <input type="text" class="fields" id="phonenum" onBlur='checkPhone(id);'>
                 <br>
             </fieldset>
+
+            <div id="main-message-box" class="hideMainBox">
+                    <div id="conMessageBOX"></div><button id="cross-Button"
+                     onClick="hideMainBox('hello misbah')" onmouseover="this.id='cross-Button1'" onmouseout="this.id='cross-Button'"><i class='fa fa-times'></i></button>
+            </div>
+            
             <fieldset class="field1">
                 <legend>Enter your payment information</legend>
                 <span class="conheadings">Card Type</span>
@@ -193,11 +213,6 @@
                 <input type="submit" value="Checkout Now" id="conbu" onFocus="this.id='conbu'" onmouseover="this.id='conbu1'" onmouseout="this.id='conbu'">
             </div>
         </form>
-        <div id="main-message-box" class="hideMainBox">
-            <div id="conMessageBOX"></div>
-            <button id="cross-Button" onClick="hideMainBox(id)" onmouseover="this.id='cross-Button1'" onmouseout="this.id='cross-Button'"><i class='fa fa-times'></i></button>
-        </div>
-
     </div>
    
 </body>
@@ -502,9 +517,14 @@
 
 
 
-    let hideMainBox = (id) => {
-        let box = document.getElementById(id);
-        box.parentNode.className = 'hideMainBox';
+    let hideMainBox = (ok) => {
+        console.log(ok);
+        console.log("helooo")
+        
+        let box = document.getElementById("main-message-box");
+        box.className = "hideMainBox";
+        console.log(box);
+        console.log(box.className);
     }
     let gotoback = () => {
         history.back();

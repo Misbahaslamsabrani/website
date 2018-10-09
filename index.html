@@ -13,10 +13,11 @@
     <script src='addtoWishList.js'></script>
     <style>
         #homeslider {
-            width: 99.5%;
+            width: 95%;
             height: 600px;
             z-index: -1;
             position: relative;
+            margin: 0 auto;
         }
 
         #hs {
@@ -30,7 +31,7 @@
             border: 1px solid rgb(172, 85, 85);
             border-radius: 100%;
             display: inline-block;
-            margin-top: -110px;
+            /* margin-top: -110px; */
         }
 
 
@@ -52,17 +53,17 @@
 
         .shop {
             display: inline-block;
-            margin: 2px;
-            margin-right: 5%;
-            font-size: 26px;
+            margin-left: 3%;
+            margin-right: 3%;
+            font-size: 240%;
             vertical-align: top;
             text-shadow: 2px 2px 2px rgb(255, 186, 198);
         }
 
         #shop {
 
-            width: 39%;
-            height: 45px;
+            width: 60%;
+            height: 70px;
             max-height: 48px;
             
             padding-top: 13px;
@@ -70,11 +71,11 @@
             margin-top: 15px; 
             z-index: 1;
             position: relative;
-            border: 1px solid white;
+            
             display: inline-block;
-            border-radius: 60px;
-            background-color: white;
-            font-family:Forte;
+            border-radius: 3px;
+            font-family:arial;
+            
             vertical-align: top;
         }
         #s-sale-box {
@@ -102,22 +103,27 @@
 
         .spa {
             display: block;
-            font-size: 18px;
+            height: 30px;
+           padding-top: 5px;
+            font-size: 20px;
             overflow: auto;
             border: 1px solid rgb(240, 170, 170);
             background-color: rgb(250, 210, 217);
             border-radius: 2px;
-            padding: 3px;
             font-family: 'Courier New';
+            text-shadow: none;
+            
         }
 
         .spa1 {
+            padding-top: 5px;
+            height: 30px;
+            text-shadow: none;
             display: block;
             overflow: auto;
             border: 1px solid rgb(252, 191, 191);
             background-color: rgba(245, 130, 147, 0.247);
             border-radius: 2px;
-            padding: 3px;
             font-family: 'Courier New';
             font-size: 18px;
         }
@@ -132,35 +138,43 @@
         #circle-container {
             z-index: 1;
             position: absolute;
-            bottom: -35%;
+            bottom: -15%;
             left: 45%;
         }
         #showMeTheCorrectWay{height: 100px;}
-        .hideIt{width: 380px; height:99px ;  display: inline-block;}
-        .hideIt1{width: 150px; height:99px ;  display: inline-block;}
+        .hideIt{width: 10%; height:99px ;  display: inline-block; }
+        .hideIt1{width: 3%; height:99px ;  display: inline-block;}
     </style>
 </head>
 
 <body onLoad="sale();">
-    <div id="a">
-        <div class="headerMain">
-            <img src="main_logo2.jpg" alt="" id="mainlogo">
+        <div id="a">
+                <div class="headerMain">
+                    <span class="misha">Misha's </span><span class="fashion">Fashion</span>
+                    <span class="store"> Store</span>
+                </div>
+                <div class="headerMain2">
+                <div class="headerB" >
+                    <a href="index.html">Home</a>
+                </div>
+                <div class="headerB" >
+                    <a href="sales.html">Sales</a>
+                </div>
+        
+                <div class="headerS" onClick="logIn();" id="logcursor" >
+                    <i class="fa fa-user-circle"></i> Login </div>
+                <div class="header"  >
+                    <a href="addtocart.html">
+                        <i class="fa fa-cart-plus"></i> Cart
+                        <span>(<b id="showItemsNum">0</b>)</span>
+                    </a>
+        
+                </div>
+                </div>
         </div>
-        <div class="headerB" onmouseover="this.className='headerB1'" onmouseout="this.className='headerB'">
-            <a href="index.html">Home</a>
-        </div>
-        <div class="headerB" onmouseover="this.className='headerB1'" onmouseout="this.className='headerB'">
-            <a href="sales.html">Sales</a>
-        </div>
-
-        <div class="headerS" onClick="logIn();" id="logcursor" onmouseover="this.className='headerS1'" onmouseout="this.className='headerS'">
-            <i class="fa fa-user-circle"></i> Login </div>
-        <div class="header" onmouseover="this.className='header1'" onmouseout="this.className='header'">
-            <a href="addtocart.html"><i class="fa fa-cart-plus"></i> Cart <span>(<b id="showItemsNum">0</b>)</span></a>
-
-        </div>
-        <div id="line"></div>
-    </div>
+                <div id="line"></div>
+            
+    
 
     <!-- *********Body*********** -->
 

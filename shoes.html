@@ -13,25 +13,31 @@
 </head>
 
 <body>
-    <div id="a">
-        <div class="headerMain">
-            <img src="main_logo2.jpg" alt="" id="mainlogo">
+        <div id="a">
+                <div class="headerMain">
+                    <span class="misha">Misha's </span><span class="fashion">Fashion</span>
+                    <span class="store"> Store</span>
+                </div>
+                <div class="headerMain2">
+                <div class="headerB" >
+                    <a href="index.html">Home</a>
+                </div>
+                <div class="headerB" >
+                    <a href="sales.html">Sales</a>
+                </div>
+        
+                <div class="headerS" onClick="logIn();" id="logcursor" >
+                    <i class="fa fa-user-circle"></i> Login </div>
+                <div class="header"  >
+                    <a href="addtocart.html">
+                        <i class="fa fa-cart-plus"></i> Cart
+                        <span>(<b id="showItemsNum">0</b>)</span>
+                    </a>
+        
+                </div>
+                </div>
         </div>
-        <div class="headerB" onmouseover="this.className='headerB1'" onmouseout="this.className='headerB'">
-            <a href="index.html">Home</a>
-        </div>
-        <div class="headerB" onmouseover="this.className='headerB1'" onmouseout="this.className='headerB'">
-            <a href="sales.html">Sales</a>
-        </div>
-
-        <div class="headerS" onClick="logIn();" id="logcursor" onmouseover="this.className='headerS1'" onmouseout="this.className='headerS'">
-            <i class="fa fa-user-circle"></i> Login </div>
-        <div class="header" onmouseover="this.className='header1'" onmouseout="this.className='header'" >
-                <a href="addtocart.html"><i class="fa fa-cart-plus"></i> Cart<span>(<b id="showItemsNum">0</b>)</span></a>
-
-        </div>
-        <div id="line"></div>
-    </div>
+                <div id="line"></div>
     <!-- *****body***** -->
     <div class="boxes">
             <div class="backbutton"><a href="javaScript:void(0)" class="fa fa-chevron-left" onclick="backpage();"></a></div>
@@ -41,7 +47,7 @@
             <div>
                 <img src="images/wed1.jpg" class="WH">
             </div>
-            <div>
+            <div class="priceTag">
                 <span> Wedge 1 <br> Rs 1500/-</span>
                 <span class="hide" id="BOX10"> 
                 <span class="addtocartbu" id="AddToCart9">
@@ -53,7 +59,7 @@
             <div>
                 <img src="images/wed2.jpg" class="WH">
             </div>
-            <div>
+            <div class="priceTag">
                 <span> Wedge 2 <br> Rs 1500/-</span>
                 <span class="hide" id="BOX11">   
                 <span class="addtocartbu" id="AddToCart10">
@@ -65,7 +71,7 @@
             <div>
                 <img src="images/wed3.jpg" class="WH">
             </div>
-            <div>
+            <div class="priceTag">
                 <span> Wedge 3 <br> Rs 2000/-</span>
                 <span class="hide" id="BOX12">        
                 <span class="addtocartbu" id="AddToCart11">
@@ -83,7 +89,7 @@
             <div>
                 <img src="images/pum1.jpg" class="WH">
             </div>
-            <div>
+            <div class="priceTag">
                 <span> Pumps 1 <br> Rs 1500/-</span>
                 <span class="hide" id="BOX13">    
                 <span class="addtocartbu" id="AddToCart12">
@@ -95,7 +101,7 @@
             <div>
                 <img src="images/pum2.jpg" class="WH">
             </div>
-            <div>
+            <div class="priceTag">
                 <span> Pumps 2 <br> Rs 1200/-</span>
                 <span class="hide" id="BOX14">       
                 <span class="addtocartbu" id="AddToCart13">
@@ -107,7 +113,7 @@
             <div>
                 <img src="images/pum3.jpg" class="WH">
             </div>
-            <div>
+            <div class="priceTag">
                 <span> Pumps 3 <br> Rs 1500/-</span>
                 <span class="hide" id="BOX15">   
                 <span class="addtocartbu" id="AddToCart14">
@@ -125,7 +131,7 @@
             <div>
                 <img src="images/flat1.jpg" class="WH">
             </div>
-            <div>
+            <div class="priceTag">
                 <span>Black Sandals<br> Rs 450/-</span>
                 <span class="hide" id="BOX16">        
                 <span class="addtocartbu" id="AddToCart15">
@@ -137,7 +143,7 @@
             <div>
                 <img src="images/flat2.jpg" class="WH">
             </div>
-            <div>
+            <div class="priceTag">
                 <span>  Pink Stylish Sandals  <br> Rs 700/-</span>
                 <span class="hide" id="BOX17">        
                 <span class="addtocartbu" id="AddToCart16">
@@ -149,7 +155,7 @@
             <div>
                 <img src="images/flat3.jpg" class="WH">
             </div>
-            <div>
+            <div class="priceTag">
                 <span> Plain stylish Sandals  <br> Rs 500/-</span>
                 <span class="hide" id="BOX18">       
                 <span class="addtocartbu" id="AddToCart17">
